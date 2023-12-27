@@ -1,0 +1,622 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/"
+     xml:base="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:"
+     xmlns:scacchi2023="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023">
+        <dc:date>2023-12-27</dc:date>
+        <dc:description xml:lang="it">Enrico Cassano</dc:description>
+        <dc:description xml:lang="it">Ontologia costruita per scopi didattici e divulgativi, riguardante i principali eventi e personalità dell&apos;ambito scacchistico professionale.</dc:description>
+        <dc:description xml:lang="en">This ontology was built for educational and divulgative purposes. It contains the main events and characters of the professional chess scene.</dc:description>
+        <dc:title xml:lang="en">Chess Ontology - 2023</dc:title>
+        <vann:preferredNamespacePrefix>CO</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceURI>http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023</vann:preferredNamespaceURI>
+        <rdfs:label>ChessOntology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:preferredNamespaceURI -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:preferredNamespaceURI"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaGiocataDaGiocatore"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatorePartecipaTorneo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatorePartecipaTorneo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaDiTorneo"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaDiTorneo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaDiTorneo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#torneoContienePartita"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaGiocataDaGiocatore -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaGiocataDaGiocatore">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#torneoContienePartita -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#torneoContienePartita">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#annoTorneo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#annoTorneo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#nomeCompleto -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#nomeCompleto">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#numeroPartecipanti -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#numeroPartecipanti">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#punteggioElo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#punteggioElo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4000</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#tempoPerGiocatore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#tempoPerGiocatore">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevoleConTempo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>Tempo iniziale per ciascun giocatore durante la partita. L&apos;unità di misura è minuti.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti">
+        <owl:equivalentClass rdf:resource="https://www.wikidata.org/wiki/Q6256"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Germania"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Inghilterra"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Lettonia"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Norvegia"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#RepubblicaCeca"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Romania"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Russia"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#USA"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita">
+        <owl:equivalentClass rdf:resource="https://www.bbc.co.uk/ontologies/sport/Match"/>
+        <rdfs:label>Partita</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevoleConTempo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevoleConTempo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevoleLibera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevoleLibera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeBlitz -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeBlitz">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#tempoPerGiocatore"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeGiocoRapido -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeGiocoRapido">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#tempoPerGiocatore"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeStandard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeStandard">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#tempoPerGiocatore"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista">
+        <owl:equivalentClass rdf:resource="https://www.wikidata.org/wiki/Q10873124"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaAmatore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaAmatore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#torneoContienePartita"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoInternazionale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoInternazionale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoNazionale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoNazionale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.bbc.co.uk/ontologies/sport/Match -->
+
+    <owl:Class rdf:about="https://www.bbc.co.uk/ontologies/sport/Match">
+        <rdfs:label>Match</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q10873124 -->
+
+    <owl:Class rdf:about="https://www.wikidata.org/wiki/Q10873124">
+        <rdfs:label>ChessPlayer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q6256 -->
+
+    <owl:Class rdf:about="https://www.wikidata.org/wiki/Q6256">
+        <rdfs:label>Country</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#AleksandraGoryachkina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#AleksandraGoryachkina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#DingLiren -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#DingLiren">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#FabioCaruana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#FabioCaruana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Germania -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Germania"/>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HikaruNakamura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HikaruNakamura">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HouYifan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HouYifan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HumpyKoneru -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HumpyKoneru">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Inghilterra -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Inghilterra"/>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#JuWenjun -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#JuWenjun">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Karpov -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Karpov">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+        <scacchi2023:giocatoreGiocaPartita rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaKasparovKarpov"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Kasparov -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Kasparov">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+        <scacchi2023:giocatoreGiocaPartita rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaKasparovKarpov"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#KaterynaLagno -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#KaterynaLagno">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#LeiTingjie -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#LeiTingjie">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Lettonia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Lettonia"/>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#MagnusCarlsen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#MagnusCarlsen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Norvegia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Norvegia"/>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#RepubblicaCeca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#RepubblicaCeca"/>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Romania -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Romania"/>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Russia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Russia"/>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#USA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#USA"/>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaKasparovKarpov -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaKasparovKarpov">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+            <rdf:Description rdf:about="https://www.wikidata.org/wiki/Q10873124"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
