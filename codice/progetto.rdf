@@ -123,12 +123,50 @@
     
 
 
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#strategiaPartitaBianco -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#strategiaPartitaBianco">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#strategiaPartitaNero -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#strategiaPartitaNero">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#torneoContienePartita -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#torneoContienePartita">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitorePartita -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitorePartita">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitoreTorneo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitoreTorneo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
     </owl:ObjectProperty>
     
 
@@ -371,6 +409,28 @@
     
 
 
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia"/>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaAggressiva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaAggressiva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaDiPosizione -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaDiPosizione">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo">
@@ -444,6 +504,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Azerbaijan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Azerbaijan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ChessOlympiadsForPeopleWithDisabilities2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ChessOlympiadsForPeopleWithDisabilities2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoInternazionale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#China -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#China">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#DingLiren -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#DingLiren">
@@ -462,7 +546,9 @@
 
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Germania -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Germania"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Germania">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti"/>
+    </owl:NamedIndividual>
     
 
 
@@ -490,9 +576,19 @@
     
 
 
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IanNepomniachtchi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IanNepomniachtchi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Inghilterra -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Inghilterra"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Inghilterra">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti"/>
+    </owl:NamedIndividual>
     
 
 
@@ -540,7 +636,9 @@
 
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Lettonia -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Lettonia"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Lettonia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti"/>
+    </owl:NamedIndividual>
     
 
 
@@ -552,33 +650,59 @@
     
 
 
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Netherlands -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Netherlands">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Norvegia -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Norvegia"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Norvegia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti"/>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#RepubblicaCeca -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#RepubblicaCeca"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#RepubblicaCeca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti"/>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Romania -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Romania"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Romania">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti"/>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Russia -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Russia"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Russia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti"/>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#USA -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#USA"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#USA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WomensWorldCup2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WomensWorldCup2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoInternazionale"/>
+    </owl:NamedIndividual>
     
 
 
@@ -586,6 +710,79 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023">
         <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+        <scacchi2023:vincitoreTorneo rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#DingLiren"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldRapidTeamsChampionship2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldRapidTeamsChampionship2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoInternazionale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldSchoolTeamChampionship2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldSchoolTeamChampionship2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoInternazionale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldYouthU16ChessOlympiad2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldYouthU16ChessOlympiad2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoInternazionale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#aperturaSpagnola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#aperturaSpagnola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaDiPosizione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaCaroKhan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaCaroKhan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaDiPosizione"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaSiciliana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaSiciliana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaAggressiva"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#fianchettoDiAlfiere -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#fianchettoDiAlfiere">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaAggressiva"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#gambettoDiDonna -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#gambettoDiDonna">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaAggressiva"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaItaliana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaItaliana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia"/>
     </owl:NamedIndividual>
     
 
@@ -594,6 +791,18 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaKasparovKarpov">
         <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaNepomniachtchiLirenWCC2023 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaNepomniachtchiLirenWCC2023">
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeGiocoRapido"/>
+        <scacchi2023:partitaDiTorneo rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023"/>
+        <scacchi2023:partitaGiocataDaGiocatore rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#DingLiren"/>
+        <scacchi2023:partitaGiocataDaGiocatore rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IanNepomniachtchi"/>
+        <scacchi2023:vincitorePartita rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#DingLiren"/>
     </owl:NamedIndividual>
     
 

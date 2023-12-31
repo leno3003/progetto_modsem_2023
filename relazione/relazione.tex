@@ -26,33 +26,66 @@ grazie alla possibilità di essere giocato pressoché ovunque. Permette,
 inoltre, di essere interpretato in modo agonistico,
 grazie alla presenza di un organo regolatore, la FIDE.
 
+Fin dal Medioevo, il gioco degli scacchi ha ricoperto un ruolo sociale
+e culturale nelle corti e nella nobiltà di tutta Europa. Spesso, infatti,
+venivano usati come metafora per la guerra.
+
+
+\begin{figure}[h]
+  \caption{The Chess Players, Honore Daumier}
+  \centering
+  \label{fig:chessplayers}
+  \includegraphics[scale=1]{~/Pictures/Honoré_Daumier_032.jpg}
+\end{figure} 
+
+Anche nell'ambito artistico, gli scacchi sono stati fonte di
+ispirazione per la realizzazione di diverse opere, fra cui dipinti
+come \textit{The Chess Players} di Honore Daumier (figura
+\ref{fig:chessplayers}). Sono stati scritti poemi ispirati al gioco,
+come \textit{Scacchia ludus} di Marco Girolamo Vida.
+
+Nell'ultimo secolo e mezzo, gli scacchi sono stati al centro di un intenso studio,
+spesso guidato da personalità di spicco, come Bobby Fischer e Garry
+Kasparov. Essi - insieme a moltissimi altri professionisti di alto
+livello - hanno affrontato lo
+sport con metodologia sistematica e strumenti matematici.
+
+In fine, nel recentissimo periodo, tantissimi giovani hanno deciso di
+approcciare l'ambito, forti della possibilità di
+giocare online dal proprio smartphone, seguendo le 
+personalità di spicco - come l'ex campione del Magnus Carlsen - 
+anche sui social network. In particolare tali mezzi hanno permesso una
+distribuzione capillare del gioco e delle figure di spicco, che
+possono essere considerate, oltre che campioni e Grandi Maestri, anche 
+influencer e celebrità.
+
+\chapter{Requirements}
+
 La presenza di un'ontologia che riporti le principali figure ed eventi
 ufficiali (e non) dell'ambito, certamente sarebbe una fonte importante
 per gli scopi didattici, nello specifico per conoscere ed imparare la
-storia degli scacchi, ma anche per l'ambito divulgativo. Sarebbe
+storia degli scacchi, ma anche nell'ambito divulgativo. Sarebbe
 possibile, infatti, avere una base di conoscenza da cui attingere per
 reperire informazioni su: partite giocate, stili di gioco, evoluzione
 dei professionisti.
 L'ontologia permette inoltre di fornire una base di
 comunicazione fra diversi sistemi automatici che operano nel dominio degli
 scacchi, come possono essere database, interfacce web, e siti per la
-divulgazione informazioni come le testate giornalistiche del settore.
-
-
-\chapter{Requirements}
+diffusione di informazioni, come le testate giornalistiche del settore.
 
 \section{Finalità dell'ontologia}
 
-Le finalità principali dell'ontologia costruita sono principalmente
-quello \textbf{educativo} e \textbf{descrittivo}, ma anche per dare
-una formulazione pià strutturata ai dati presenti riguardo le partite.
+Le finalità dell'ontologia costruita sono principalmente
+quella \textbf{educativa} e \textbf{descrittiva}, oltre al poter dare
+una formulazione più strutturata ai dati esistenti dell'ambito.
 Fin dall'inizio dell'era corrente degli scacchi - ovvero da quando
 sono entrate in vigore le regole correnti, nel finire del XIX secolo -
-è sempre stato preferito avere una descrizione testuale delle partite,
-fatto anche tramite diversi stili di notazione. Tutte le partite
-documentate in tale modo, dunque, rappresentano un'enorme quantità di
-dati, da cui è possbile estrarre informazioni riguardo la strategia di
-gioco dei partecipanti, la loro propensione al rischio, l'aggressività
+è sempre stato preferibile avere una descrizione testuale delle partite,
+registrato tramite diversi stili di notazione. Tutte le partite
+documentate in tale modo, dunque, rappresentano un'importante quantità di
+dati, da cui è possbile estrarre informazioni interessanti. 
+Elementi di interesse estraibili da tali dati potebbero riguardare la strategia di
+gioco dei diversi scacchisti, la loro propensione al rischio, l'aggressività
 delle mosse giocate. Avere un'ontologia strutturata per classi,
 permette di avere una visione più chiara e ordinata di tali dati.
 
@@ -86,9 +119,87 @@ gioco delle principali personaggi dell'ambito.
 
 \chapter{Descrizione del dominio}
 
+Gli scacchi sono un gioco nato in India, il cui corrente regolamento 
+fu definito attorno al 1880. 
+
+È uno dei giochi da tavolo più popolari al mondo,
+e permette di essere interpretato in modo agonistico,
+grazie alla presenza di un organo regolatore, la FIDE.
+
+Come molti altri domini, ha subito un'importante evoluzione con l'avvento del web e
+della tecnologia moderna.
+
+\begin{figure}[h]
+  \caption{Scacchiera moderna dotata di sensori per la registrazione
+  delle mosse. Lo strumento è dotato di una porta USB-C che permette
+  la connessione di dispositivi di memoria o laptop con software
+  relativo.}
+  \centering
+  \label{fig:scacchiera}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20231231_141455.png}
+\end{figure} 
+Un primo elemento che ha permesso di
+semplificare molto l'aspetto documentale
+delle partite giocate fisicamente, sono state le scacchiere moderne,
+come quella in figura \ref{fig:scacchiera} che
+permettono la registrazione e la trasmissione delle mosse giocate,
+generando dunque un discreto quantitativo di dati che è necessario
+raccogliere, strutturare e rendere disponibile.
+
+In aggiunta a ciò, la diffusione di internet ha permesso di giocare
+partite
+online, le quali contengono altrettanta informazione interessante,
+specie se giocate fra grandi professionisti. 
+
+Il recente picco di interesse che lo scacchi ha avuto, è anche grazie alla 
+diffusione che ha subito nella cultura di
+massa. Una menzione speciale va fatta a \textit{The Queen's Gambit}, 
+serie televisiva Netflix del 2020, che ha avuto un impatto notevole nello
+\textit{svecchiare} l'immagine dello sport.
+
+
+Alcuni riferimenti importanti sono riportati nella seguente
+sitografia:
+\begin{itemize}
+  \item
+    https://digitalgametechnology.com/products/home-use-e-boards, è
+    l'azienda produttrice delle scacchiere ufficiali per i tornei
+    mondiali di scacchi, come quella sovrariportata.
+  \item https://www.chess.com/, è il sito più famoso per giocare
+    partite online, e contiene un'importante quantità di dati
+    riguardanti le partite giocate. Ogni giocatore su questo sito deve
+    dotarsi di un account, per cui è possibile interagire e osservare
+    le partite che gli scacchisti professionisti giocano, oltre al
+    poter sfidare i propri amici e cari.
+  \item https://www.fide.com/ è il sito ufficiale della Federazione
+    Internazione degli Scacchi. Su tale risorsa è possibile trovare
+    informazioni riguardo i vari giocatori, i tornei, le regole, e le
+    news più recenti riguardanti il dominio.
+\end{itemize}
+
+Per quanto riguarda i riferimenti bibligrafici, sono stati scritti
+tantissimi testi riguardanti le varie fasi di gioco, e sul come vadano
+affrontate, ma le informazioni di tali testi non sono stati utilizzati
+nella presente relazione o nella costruzione dell'ontologia.
+
+
 \chapter{Competency Questions}
 
+\begin{enumerate}
+  \item Quali sono le principali strategie scacchistiche?
+  \item Quante partite ha vinto il giocatore [X]?
+  \item Chi è stato l'ultimo vincitore del torneo [X]?
+  \item Quale giocatore ha vinto più partite usando la strategia [X]?
+\end{enumerate}
+
 \chapter{Documentazione}
+
+- regole del gioco estratte dal sito della fide (citazione necessaria)
+- personaggi di spicco (presente e passato, per quelli presenti
+rimandare ad elementi che mostrino come siano influencer su ig)
+- Libri su aperture e strategie
+- quale screenshot di chess.com
+
 
 \chapter{LODE}
 
