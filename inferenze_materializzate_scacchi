@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/"
-     xml:base="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/"
+<rdf:RDF xmlns="http://www.semanticweb.org/leno/ontologies/2024/0/untitled-ontology-35#"
+     xml:base="http://www.semanticweb.org/leno/ontologies/2024/0/untitled-ontology-35"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:"
      xmlns:scacchi2023="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/leno/ontologies/2024/0/untitled-ontology-35">
         <dc:date>2023-12-27</dc:date>
         <dc:description xml:lang="it">Enrico Cassano</dc:description>
         <dc:description xml:lang="it">Ontologia costruita per scopi didattici e divulgativi, riguardante i principali eventi e personalità dell&apos;ambito scacchistico professionale.</dc:description>
@@ -30,12 +30,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/creator -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
     
 
 
@@ -308,6 +302,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevole">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+        <rdfs:subClassOf rdf:resource="https://www.bbc.co.uk/ontologies/sport/Match"/>
     </owl:Class>
     
 
@@ -332,6 +327,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita"/>
+        <rdfs:subClassOf rdf:resource="https://www.bbc.co.uk/ontologies/sport/Match"/>
     </owl:Class>
     
 
@@ -350,6 +346,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevoleConTempo"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale"/>
     </owl:Class>
     
@@ -369,6 +366,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevoleConTempo"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale"/>
     </owl:Class>
     
@@ -388,6 +386,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevoleConTempo"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale"/>
     </owl:Class>
     
@@ -406,6 +405,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaAmatore">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+        <rdfs:subClassOf rdf:resource="https://www.wikidata.org/wiki/Q10873124"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
     </owl:Class>
     
@@ -415,6 +415,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+        <rdfs:subClassOf rdf:resource="https://www.wikidata.org/wiki/Q10873124"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
     </owl:Class>
     
@@ -496,6 +497,7 @@
     <!-- https://www.wikidata.org/wiki/Q6256 -->
 
     <owl:Class rdf:about="https://www.wikidata.org/wiki/Q6256">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/set.owl#Set"/>
         <rdfs:label>Country</rdfs:label>
     </owl:Class>
     
