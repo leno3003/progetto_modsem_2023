@@ -550,6 +550,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
         <scacchi2023:vincitorePartita rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaNepomniachtchiLirenWCC2023"/>
         <scacchi2023:vincitoreTorneo rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023"/>
+        <scacchi2023:nomeCompleto>Ding Liren</scacchi2023:nomeCompleto>
     </owl:NamedIndividual>
     
 
@@ -792,6 +793,9 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#YehudaGroenfeld">
         <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
         <scacchi2023:giocatoreGiocaPartita rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaTzabirGroenfeld"/>
+        <scacchi2023:vincitorePartita rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaTzabirGroenfeld"/>
+        <scacchi2023:vincitoreTorneo rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ChessOlympiadsForPeopleWithDisabilities2023"/>
+        <scacchi2023:nomeCompleto>Yehuda Groenfeld</scacchi2023:nomeCompleto>
         <scacchi2023:punteggioElo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2391</scacchi2023:punteggioElo>
     </owl:NamedIndividual>
     
@@ -862,6 +866,7 @@
         <scacchi2023:partitaDiTorneo rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023"/>
         <scacchi2023:partitaGiocataDaGiocatore rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#DingLiren"/>
         <scacchi2023:partitaGiocataDaGiocatore rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IanNepomniachtchi"/>
+        <scacchi2023:strategiaPartitaNero rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaSiciliana"/>
     </owl:NamedIndividual>
     
 

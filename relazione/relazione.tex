@@ -192,6 +192,60 @@ nella presente relazione o nella costruzione dell'ontologia.
   \item Quale giocatore ha vinto più partite usando la strategia [X]?
 \end{enumerate}
 
+1 - Quali sono le principali strategie scacchistiche?
+
+PREFIX: owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>
+
+SELECT ?strategia
+WHERE {
+    ?strategia rdf:type scacchi:StrategiaAggressiva.
+}
+
+2 - Quante partite ha vinto 'Ding Liren'?
+
+PREFIX: owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>
+
+SELECT (COUNT(?partitevinte) AS ?numeroPartiteVinte)
+WHERE {
+    scacchi:DingLiren scacchi:vincitorePartita ?partitevinte.
+}
+
+3 - Chi è stato l'ultimo vincitore del torneo Chess Olimpyads For
+People with Disabilities?
+
+PREFIX: owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>
+
+SELECT ?winnername
+WHERE {
+  ?x scacchi:vincitoreTorneo scacchi:ChessOlympyadsForPeopleWithDisabilities2023.
+  ?x scacchi:nomeCompleto ?winnername.
+}
+
+4 - Quale giocatore ha vinto più partite usando la difesa siciliana?
+
+PREFIX: owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>
+
+SELECT ?x (COUNT(?partitevinte) AS ?numeroPartiteVinte)
+WHERE {
+  ?x scacchi:vincitorePartita ?partitevinte.
+    scacchi:difesaSiciliana scacchi:strategiaPartitaNero ?partitevinte.
+}
+GROUP BY ?x
+ORDER BY (?numeroPartiteVinte)
+
+
 \chapter{Documentazione}
 
 - regole del gioco estratte dal sito della fide (citazione necessaria)
