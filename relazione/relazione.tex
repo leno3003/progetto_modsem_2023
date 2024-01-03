@@ -194,6 +194,7 @@ nella presente relazione o nella costruzione dell'ontologia.
 
 1 - Quali sono le principali strategie scacchistiche?
 
+\begin{verbatim}
 PREFIX: owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -203,9 +204,11 @@ SELECT ?strategia
 WHERE {
     ?strategia rdf:type scacchi:StrategiaAggressiva.
 }
+\end{verbatim}
 
 2 - Quante partite ha vinto 'Ding Liren'?
 
+\begin{verbatim}
 PREFIX: owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -215,10 +218,12 @@ SELECT (COUNT(?partitevinte) AS ?numeroPartiteVinte)
 WHERE {
     scacchi:DingLiren scacchi:vincitorePartita ?partitevinte.
 }
+\end{verbatim}
 
 3 - Chi è stato l'ultimo vincitore del torneo Chess Olimpyads For
 People with Disabilities?
 
+\begin{verbatim}
 PREFIX: owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -229,9 +234,11 @@ WHERE {
   ?x scacchi:vincitoreTorneo scacchi:ChessOlympyadsForPeopleWithDisabilities2023.
   ?x scacchi:nomeCompleto ?winnername.
 }
+\end{verbatim}
 
 4 - Quale giocatore ha vinto più partite usando la difesa siciliana?
 
+\begin{verbatim}
 PREFIX: owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -244,16 +251,161 @@ WHERE {
 }
 GROUP BY ?x
 ORDER BY (?numeroPartiteVinte)
+\end{verbatim}
 
 
 \chapter{Documentazione}
 
-- regole del gioco estratte dal sito della fide (citazione necessaria)
-- personaggi di spicco (presente e passato, per quelli presenti
-rimandare ad elementi che mostrino come siano influencer su ig)
-- Libri su aperture e strategie
-- quale screenshot di chess.com
+Essendo un gioco presente da diversi secoli, è presente moltissima
+documentazione e altrettanti dati riguardanti statistiche e partite
+giocate. L'organizzazione e l'accessibilità di tale mole di dati è uno degli scopi della
+presente ontologia. Uno dei documenti principali, e gerarchicamente il
+più importante, è certamente l'\textit{handbook} redatto dalla FIDE,
+contenente le regole di gioco. In esso si trovano:
+\begin{itemize}
 
+  \item Gli obiettivi delle partite
+  \item Come sono strutturate le scacchiere
+  \item Quali pezzi hanno a disposizione i giocatori
+  \item La configurazione iniziale di tali pezzi
+  \item Le regole di movimento dei pezzi
+  \item Le regole riguardo l'alternarsi dei turni
+  \item Quali sono le possibili condizioni di terminazione di una
+    partita
+
+\end{itemize}, 
+
+
+Ad esempio, il punto 1.2 di tale handbook cita: "\textit{The objective of each player is to place the opponent’s king ‘under attack’ in such a way
+that the opponent has no legal move. The player who achieves this goal is said to have
+‘checkmated’ the opponent’s king and to have won the game. Leaving one’s own king
+under attack, exposing one’s own king to attack and also ’capturing’ the opponent’s king
+are not allowed. The opponent whose king has been checkmated has lost
+the game.}"
+
+\begin{figure}[h]
+  \caption{Pezzi a disposizione di ogni giocatore ad inizio partita.}
+  \centering
+  \label{fig:pezzi_inizio}
+  \includegraphics[scale=.6]{~/Pictures/Screenshots/Screenshot_20240103_145340.png}
+\end{figure} 
+
+\begin{figure}[h]
+  \caption{Posizione iniziale dei vari pezzi}
+  \centering
+  \label{fig:inizio_scacchiera}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240103_145429.png}
+\end{figure} 
+
+Viene inoltre descritta la situazione iniziale di ogni partita, come
+si denota nelle immagini \ref{fig:pezzi_inizio} e \ref{fig:inizio_scacchiera}.
+
+In aggiunta a tali informazioni basilari del gioco, vengono aggiunte
+specifiche riguardanti le competizioni ufficiali ed i torne, quali:
+
+\begin{itemize}
+  \item la regolamentazione del tempo a disposizione dei
+    giocatori, 
+  \item la gestione delle mosse irregolari, 
+  \item la registrazione delle varie mosse giocate, 
+  \item l'assegnazione dei punteggi.
+  \item il codice di condotta che i giocatori devono mantenere durante
+    partite di tornei ufficiali.
+
+\end{itemize}
+
+Ad esempio, per quanto riguarda i sistemi di punteggio ufficiali,
+l'handbook afferma, nella regola 11.1, che: "\textit{Unless announced otherwise in advance, a player who wins his game, or wins by forfeit,
+scores one point (1), a player who loses his game, or forfeits scores no points (0) and a
+player who draws his game scores a half point (½).}"
+
+Infine, sono presenti appendici estremamente importanti, fra cui le
+regole le regole di gioco quando partecipano ad una partita i giocatori con 
+disabilità visive. Qui vengono,
+infatti, definite in modo preciso come devono essere fatte le
+scacchiere ausiliarie e come va modificata la notazione riguardante le
+righe e le colonne della scacchiera. La scacchiera per il giocatore
+affetto da handicap visivo, infatti, deve:
+
+\begin{itemize}
+  \item Essere grande almeno 20 cm per 20 cm
+  \item Le caselle nere devono essere in rilievo
+  \item Devono essere dotate di sicura per i pezzi, che permette di
+    determinare quanto un pezzo deve obbligatoriamente essere mosso
+  \item Ogni pezzo deve essere dotato di un perno che gli permetta di
+    essere correttamente inserito nella sicura di cui sopra
+  \item Ogni pezzo deve essere realizzato con un design di tipo
+    Staunton, come si vede in immagine \ref{fig:pezzi_staunton}
+\end{itemize}
+
+\begin{figure}[h]
+  \caption{Staunton Chess Set. Pezzi standad per i tornei, obbligatori
+  quando una partita si disputa con almeno un giocatore affetto da handicap visivi.}
+  \centering
+  \label{fig:pezzi_staunton}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/400px-JaquesCookStaunton.jpg}
+\end{figure} 
+
+In aggiunta alla conformazione delle scacchiere, viene anche espresso
+esattamente come deve procedere il gioco. La regola 1 dell'appendice E
+sezione 2, afferma infatti che: "\textit{The moves shall be announced clearly, repeated by the opponent and executed on his
+chessboard. When promoting a pawn, the player must announce which piece is
+chosen.}" Vengono inoltre aggiunti suggerimenti su come riferirsi alle
+traverse e alle colonne della scacchiera, in alternativa alle semplici
+lettere e numeri. Devono inoltre essere presenti orologi speciali per
+le persone affette da handicap visivi, che permettano di controllare
+il tempo tramite dei punti e delle tacche in rilievo.
+
+Oltre all'handbook della FIDE, un'altra importantissima fonte di
+informazioni è il popolaissimo sito di scacchi online
+\textit{chess.com}. Come si evince dallo screenshot
+\ref{fig:chess.com_1}, nella prima schermata che viene mostrata è
+possibile giocare contro altri utenti, contro il computer, oppure di
+far generare una scacchiera con cui poter giocare con qualcun altro
+fisicamente presente con noi.
+
+\begin{figure}[h]
+  \caption{Screenshots della homepage di chess.com}
+  \centering
+  \label{fig:chess.com_1}
+  \includegraphics[scale=.5]{~/Pictures/Screenshots/Screenshot_20240103_152508.png}
+\end{figure} 
+
+Nel secondo screenshot \ref{fig:chess.com_2} è possibile vedere il
+menù offerto dall'applicazione, in cui sono presenti, oltre alle varie
+modalità di gioco descritte precedentemente, un nutrito insieme di
+possibilità:
+\begin{itemize}
+  \item È possibile fare \textit{puzzle}, ovvero risolvere
+    situazioni di scacchi in cui è necessario trovare la mossa
+    vincente, o la sequenza di mosse vincenti, per il giocatore bianco
+    o per il giocatore nero.
+  \item È presente una sezione \textit{learn}, in cui sono video ed
+    articoli educativi riguardo le basi e le varie fasi di gioco,
+    quali aperture, mediogioco e finali.
+  \item È possibile vedere partite di altri giocatori in diretta,
+    specialmetne quelle dei giocatori più forti e famosi
+  \item È presente una sezione di \textit{news} dell'ambito
+  \item È presente anche una sezione \textit{Social}, in cui è
+    possibile condividere i propri risultati e fare riferimento a
+    personalità rilevanti del gioco anche su social network.
+\end{itemize}
+
+\begin{figure}[h]
+  \caption{Screenshot 2 di chess.com, menù delle varie opzioni.}
+  \centering
+  \label{fig:chess.com_2}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240103_152518.png}
+\end{figure}
+
+Riferimenti:
+\begin{itemize}
+
+  \item \url{https://www.fide.com/FIDE/handbook/LawsOfChess.pdf}
+  \item \url{https://en.wikipedia.org/wiki/Staunton_chess_set}
+  \item \url{https://www.chess.com/}
+
+\end{itemize}
 
 \chapter{LODE}
 

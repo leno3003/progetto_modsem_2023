@@ -7,7 +7,10 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:vann="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:scacchi2023="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023">
         <dc:date>2023-12-27</dc:date>
@@ -54,6 +57,12 @@
     <!-- http://purl.org/dc/elements/1.1/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
     
 
 
@@ -272,6 +281,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#FM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#FM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#GM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#GM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IM"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#FM"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti">
@@ -420,6 +453,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaVittoriosu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaVittoriosu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia">
@@ -472,6 +513,22 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoNazionale">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionship -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionship">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoInternazionale"/>
     </owl:Class>
     
 
@@ -758,7 +815,7 @@
     <!-- http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023">
-        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionship"/>
         <scacchi2023:annoTorneo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2023</scacchi2023:annoTorneo>
     </owl:NamedIndividual>
     
@@ -866,7 +923,6 @@
         <scacchi2023:partitaDiTorneo rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023"/>
         <scacchi2023:partitaGiocataDaGiocatore rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#DingLiren"/>
         <scacchi2023:partitaGiocataDaGiocatore rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IanNepomniachtchi"/>
-        <scacchi2023:strategiaPartitaNero rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaSiciliana"/>
     </owl:NamedIndividual>
     
 
@@ -877,6 +933,338 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeStandard"/>
         <scacchi2023:partitaDiTorneo rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ChessOlympiadsForPeopleWithDisabilities2023"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/punteggio">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitorePartita"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaVittoriosu"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionship"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/t"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitoreTorneo"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampion"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#punteggioElo"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/punteggio"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/punteggio"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2400</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#FM"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#punteggioElo"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/punteggio"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/punteggio"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2400</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IM"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#punteggioElo"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/punteggio"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/punteggio"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2500</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#GM"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
 </rdf:RDF>
 
 
