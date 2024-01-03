@@ -185,14 +185,9 @@ nella presente relazione o nella costruzione dell'ontologia.
 
 \chapter{Competency Questions}
 
-\begin{enumerate}
-  \item Quali sono le principali strategie scacchistiche?
-  \item Quante partite ha vinto il giocatore [X]?
-  \item Chi è stato l'ultimo vincitore del torneo [X]?
-  \item Quale giocatore ha vinto più partite usando la strategia [X]?
-\end{enumerate}
 
-1 - Quali sono le principali strategie scacchistiche?
+1 - Quali sono le principali strategie scacchistiche considerate
+\textit{aggressive}?
 
 \begin{verbatim}
 PREFIX: owl: <http://www.w3.org/2002/07/owl#>
@@ -253,6 +248,21 @@ GROUP BY ?x
 ORDER BY (?numeroPartiteVinte)
 \end{verbatim}
 
+5 - Chi è la/lo scacchista con il punteggio Elo più alto?
+
+\begin{verbatim}
+PREFIX: owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>
+
+SELECT ?giocatore ?punteggio
+WHERE {
+    ?giocatore rdf:type scacchi:Scacchista.
+    ?giocatore scacchi:punteggioElo ?punteggio.
+}
+ORDER BY DESC(?punteggio)
+\end{verbatim}
 
 \chapter{Documentazione}
 
