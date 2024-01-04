@@ -186,11 +186,71 @@ nella presente relazione o nella costruzione dell'ontologia.
 \chapter{Competency Questions}
 
 
+
+
+\chapter{Flusso di utilizzo e Mockup}
+
+Dato il target di utenti di questa ontologia, ovvero neofiti dello
+sacchi, studenti e utenti curiosi, il flusso di interazione di un 
+possibile sito che estragga la conoscenza dalla corrente ontologia, dovrebbe
+certamente permettere un utilizzo immediato e semplice. Un possibile
+flusso di interazione è riportato nella figura \ref{fig:flusso}. 
+
+Su di esso, si basa il mockup allegato. Una possibile landing page del
+sito è visibile nell'immagine \ref{fig:landing}. Da qui, è possibile
+navigare la conoscenza presente nell'ontologia tramite i bottoni
+\textit{Scacchisti}, \textit{Tornei} e \textit{Strategie}. Per ognuno
+di essi, è presente un'apposita pagina che riporti la lista di tutte
+le istanze presenti nell'ontologia, insieme ad un bottone per cercare
+un elemento specifico. Ogni elemento della lista è cliccabile, e
+rimanda ad una pagina specifica di tale elemento in cui sono raccolte
+informazioni e proprietà specifiche, ovvero quelle presenti
+nell'ontologia. Rappresentazioni specifiche delle varie pagine sono
+presenti nelle immagini \ref{fig:scacchisti}, \ref{fig:tornei} e \ref{fig:strategie}.
+
+\begin{figure}[h]
+  \caption{Flusso di interazione ed utilizzo del sito.}
+  \centering
+  \label{fig:flusso}
+  \includegraphics[scale=.8]{~/studio/uni/corsi_22_23/modsem/progetto/relazione/FlussoMODSEM2023.drawio.pdf}
+\end{figure}
+
+\begin{figure}[h]
+  \caption{Mockup della landing page del sito.}
+  \centering
+  \label{fig:landing}
+  \includegraphics[scale=1]{~/studio/uni/corsi_22_23/modsem/progetto/relazione/landingpage.drawio.pdf}
+\end{figure} 
+
+\begin{figure}[h]
+  \caption{Mockup della pagina specifica per gli scacchisti del sito.}
+  \centering
+\label{fig:scacchisti}
+  \includegraphics[scale=1]{~/studio/uni/corsi_22_23/modsem/progetto/relazione/scacchisti.drawio.pdf}
+\end{figure} 
+
+\begin{figure}[h]
+  \caption{Mockup della pagina specifica per le strategie del sito.}
+  \centering
+\label{fig:strategie}
+  \includegraphics[scale=1]{~/studio/uni/corsi_22_23/modsem/progetto/relazione/strategie.drawio.pdf}
+\end{figure} 
+
+
+\begin{figure}[h]
+  \caption{Mockup della pagina specifica per i tornei del sito.}
+  \centering
+\label{fig:tornei}
+  \includegraphics[scale=1]{~/studio/uni/corsi_22_23/modsem/progetto/relazione/tornei.drawio.pdf}
+\end{figure} 
+
+\chapter{Query SPARQL}
+
 1 - Quali sono le principali strategie scacchistiche considerate
 \textit{aggressive}?
 
 \begin{verbatim}
-PREFIX: owl: <http://www.w3.org/2002/07/owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>
@@ -201,10 +261,27 @@ WHERE {
 }
 \end{verbatim}
 
+Questa query permette di ottenere informazioni riguardo tutte le
+istanze della classe \textit{StrategiaAggressiva}, quindi tutte le
+aperture che in generale sono prone a generare una partita con molti
+cambi. Sono strategie diametralmente opposte e mutualmente esclusive a
+quelle di Posizione, della classe \textit{StrategiaDiPosizione}. Il
+fatto che siano mutualmente esclusive viene riportato nell'ongologia
+tramite un legame \textit{disjointWith}.
+
+I dati ottenuti da tale query sono mostrati in figura \ref{fig:query1}.
+
+\begin{figure}[h]
+  \caption{Risultati della query 1.}
+  \centering
+  \label{fig:query1}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_174014.png}
+\end{figure} 
+
 2 - Quante partite ha vinto 'Ding Liren'?
 
 \begin{verbatim}
-PREFIX: owl: <http://www.w3.org/2002/07/owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>
@@ -215,26 +292,61 @@ WHERE {
 }
 \end{verbatim}
 
+Questa query è generalmente utile per ottenere informazioni riguardo
+il numero di vittorie ottenute da uno specifico giocatore. Sicuramente
+è una delle query più popolari e frequenti, sia per curiosità degli
+utenti, ma anche per quelle che possono essere query automatiche
+scritte con il fine di costruire statistiche sui vari giocatori, e
+mantenere le pagine informative relative ad essi sempre aggiornate.
+
+I dati ottenuti da tale query sono mostrati in figura \ref{fig:query2}.
+Essendo presente nell'ontologia un'unica partita vinta da Ding Liren,
+viene conteggiata solo essa.
+
+\begin{figure}[h]
+  \caption{Risultati della query 2.}
+  \centering
+  \label{fig:query2}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_174230.png}
+\end{figure} 
+
 3 - Chi è stato l'ultimo vincitore del torneo Chess Olimpyads For
 People with Disabilities?
 
 \begin{verbatim}
-PREFIX: owl: <http://www.w3.org/2002/07/owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>
 
 SELECT ?winnername
 WHERE {
-  ?x scacchi:vincitoreTorneo scacchi:ChessOlympyadsForPeopleWithDisabilities2023.
+  ?x scacchi:vincitoreTorneo scacchi:ChessOlympiadsForPeopleWithDisabilities2023.
   ?x scacchi:nomeCompleto ?winnername.
 }
 \end{verbatim}
 
+Questa query è utile per ottenere informazioni riguardo l'ultimo
+vincitore di uno specifico torneo, in questo caso si tratta del torneo
+\textit{Chess Olimpyads For People With Disabilities} del 2023. Anche
+in questo caso, è una query molto importante e certamente molto
+frequente, perchè è un informazione che può essere utile per diversi
+scopi, primo fra tutti quello educativo, ma anche per scopi di analisi
+e raccolta dati.
+
+I dati ottenuti da tale query sono mostrati in figura \ref{fig:query3}.
+
+\begin{figure}[h]
+  \caption{Risultati della query 3.}
+  \centering
+  \label{fig:query3}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_174642.png}
+\end{figure} 
+
 4 - Quale giocatore ha vinto più partite usando la difesa siciliana?
 
 \begin{verbatim}
-PREFIX: owl: <http://www.w3.org/2002/07/owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>
@@ -245,13 +357,31 @@ WHERE {
     scacchi:difesaSiciliana scacchi:strategiaPartitaNero ?partitevinte.
 }
 GROUP BY ?x
-ORDER BY (?numeroPartiteVinte)
+ORDER BY ASC(?numeroPartiteVinte)
 \end{verbatim}
+
+L'obiettivo centrale di questa query è più specifica per l'ambito
+statistico, ovvero cercare di capire quale giocatore favorisce una
+certa strategia, e quante volte tale strategia è stata motivo di
+vittoria per tale giocatore. Questo genere di informazione, talvolta
+più avanzata e specifica rispetto a quelle estratte dalle query
+precedenti, può certamente tornare utile anche ai giocatori più
+esperti, per apprendere ed imitare lo stile di gioco dei
+professionisti.
+
+I dati ottenuti da tale query sono mostrati in figura \ref{fig:query4}.
+
+\begin{figure}[h]
+  \caption{Risultati della query 4.}
+  \centering
+  \label{fig:query4}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_175016.png}
+\end{figure} 
 
 5 - Chi è la/lo scacchista con il punteggio Elo più alto?
 
 \begin{verbatim}
-PREFIX: owl: <http://www.w3.org/2002/07/owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>
@@ -263,6 +393,21 @@ WHERE {
 }
 ORDER BY DESC(?punteggio)
 \end{verbatim}
+
+Anche questa query sarà certamente fra le più frequenti, se non la più
+frequente. Certamente l'attenzione generale sarà sempre rivolta alle
+personalità che dominano i rispettivi campi. Essendo il punteggio Elo
+la metrica con cui viene valutata la bontà di una/uno scacchista,
+certamente sarà uno dei dati più richiesti.
+
+I dati ottenuti da tale query sono mostrati in figura \ref{fig:query5}.
+
+\begin{figure}[h]
+  \caption{Risultati della query 5.}
+  \centering
+  \label{fig:query5}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_175302.png}
+\end{figure} 
 
 \chapter{Documentazione}
 

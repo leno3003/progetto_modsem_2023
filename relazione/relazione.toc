@@ -7,6 +7,8 @@
 \contentsline {section}{\numberline {2.3}Utenti dell'ontologia}{8}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Descrizione del dominio}{9}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Competency Questions}{13}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Documentazione}{15}{chapter.5}%
-\contentsline {chapter}{\numberline {6}LODE}{21}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Visualizzazione}{23}{chapter.7}%
+\contentsline {chapter}{\numberline {5}Flusso di utilizzo e Mockup}{15}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Query SPARQL}{21}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Documentazione}{27}{chapter.7}%
+\contentsline {chapter}{\numberline {8}LODE}{33}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Visualizzazione}{35}{chapter.9}%
