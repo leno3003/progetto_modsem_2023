@@ -10,5 +10,6 @@
 \contentsline {chapter}{\numberline {5}Flusso di utilizzo e Mockup}{15}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Query SPARQL}{21}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Documentazione}{27}{chapter.7}%
-\contentsline {chapter}{\numberline {8}LODE}{33}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Visualizzazione}{35}{chapter.9}%
+\contentsline {chapter}{\numberline {8}Regole SWRL}{33}{chapter.8}%
+\contentsline {chapter}{\numberline {9}LODE}{35}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Visualizzazione}{37}{chapter.10}%

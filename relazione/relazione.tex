@@ -138,6 +138,7 @@ della tecnologia moderna.
   \label{fig:scacchiera}
   \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20231231_141455.png}
 \end{figure} 
+
 Un primo elemento che ha permesso di
 semplificare molto l'aspetto documentale
 delle partite giocate fisicamente, sono state le scacchiere moderne,
@@ -562,7 +563,82 @@ Riferimenti:
 
 \end{itemize}
 
+\chapter{Regole SWRL}
+
+Come estensione a scelta, ho scelto la scrittura ri regole $SWRL$, che
+permettano di inferire informazioni ulteriori a quelle ottenibili dal
+reasoner presente in Protegè.
+Seguono le regole swirl con relativa giustificazione.
+
+1 - Aggiungo alla sottoclasse $Scacchista$ una classe
+$ScacchistaVittoriosu$, in cui inserire tutte le istanze della classe
+scacchista che abbiano vinto almeno un torneo internazionale.
+La regola è definita come segue:
+\begin{verbatim}
+
+scacchi2023:Scacchista(?x) ^ scacchi2023:vincitorePartita(?x, ?y) 
+      -> scacchi2023:ScacchistaVittoriosu(?x)
+
+\end{verbatim}
+
+2 - È stata aggiunta la sottoclasse $WorldChampion$ alla classe
+$ScacchistaProfessionista$, con il fine di identificare tutti le/gli
+scacchisti che abbiano vinto almeno un campionato del mondo, ovvero
+un torneo ufficiale internazionale appartenente alla classe
+$WorldChampionship$, sottoclasse di $TorneoInternazionale$.
+
+\begin{verbatim}
+
+scacchi2023:ScacchistaProfessionista(?x) ^ scacchi2023:WorldChampionship(?t) 
+^ scacchi2023:vincitoreTorneo(?x, ?t) -> scacchi2023:WorldChampion(?x)
+
+\end{verbatim}
+
+3 - La presente regola, e le successive due, hanno lo scopo di
+categorizzare secondo i ranking e rating ufficiali della FIDE, tutti
+le/gli scacchiste/i professioniste/i, in relazione al loro punteggio ELO.
+Abbiamo infatti, secondo regolamento ufficiale, che:
+\begin{itemize}
+  \item Professioniste/i con punteggio ELO superiore ai 2300 sono
+    classificate/i come \textit{Mestri FIDE}, nell'ontologia
+    identificate/i nella classe $FM$
+  \item Professioniste/i con punteggio ELO superiore ai 2400 sono
+    classificati come \textit{Mestri Internazionali}, nell'ontologia
+    identificati nella classe $IM$
+  \item Professioniste/i con punteggio ELO superiore ai 2500 sono
+    classificati come \textit{Granmestri}, nell'ontologia
+    identificati nella classe $GM$
+\end{itemize}
+
+\begin{verbatim}
+scacchi2023:ScacchistaProfessionista(?x) ^
+scacchi2023:punteggioElo(?x, ?punteggio) ^
+swrlb:greaterThan(?punteggio, 2300) -> scacchi2023:FM(?x)
+\end{verbatim}
+
+4 - Maestro Internazionale
+
+\begin{verbatim}
+scacchi2023:ScacchistaProfessionista(?x) ^
+scacchi2023:punteggioElo(?x, ?punteggio) ^
+swrlb:greaterThan(?punteggio, 2400) -> scacchi2023:IM(?x)
+\end{verbatim}
+
+5 - Gran Maestro
+
+\begin{verbatim}
+scacchi2023:ScacchistaProfessionista(?x) ^
+scacchi2023:punteggioElo(?x, ?punteggio) ^
+swrlb:greaterThan(?punteggio, 2500) -> scacchi2023:GM(?x)
+\end{verbatim}
+
+
 \chapter{LODE}
+
+La documentazione dell'ontologia è stata generata tramite lo strumento
+LODE. La documentazione è presente al seguente link \url{http://150.146.207.114/lode/extract?url=https%3A%2F%2Fraw.githubusercontent.com%2Fleno3003%2Fprogetto_modsem_2023%2Fmain%2Fcodice%2Fprogetto.rdf&owlapi=true&imported=true&reasoner=true&lang=it}.
+Verrà inoltre allegata una versione salvata della webpage
+all'archivio del presente progetto.
 
 \chapter{Visualizzazione}
 

@@ -1,0 +1,2 @@
+aggiungere ai prefissi dell'ontologia la sport ontology di bbc.
+aggiungi una proprietà che sia transitiva.
