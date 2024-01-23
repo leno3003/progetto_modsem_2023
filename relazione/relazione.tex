@@ -3,6 +3,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{tcolorbox}
+
 \title{Modellazione Concettuale per il Web Semantico \\ A.A. 2023-2024}
 \author{Enrico Cassano \\ N.M. 912344}
 \date{}
@@ -14,6 +15,14 @@
 \maketitle
 
 \tableofcontents
+
+\chapter{Disclaimer}
+
+Ai fini di inclusività, in questa ontologia sono state inserite alcune
+parole di sesso neutro terminado la parola con la lettera
+\textit{u}. La scelta è stata fatta per evitare di utilizzare la schwa
+o l'asterisco, che potrebbero causare problemi a livello di parsing e
+pattern matching.
 
 \chapter{Motivazioni}
 
@@ -84,7 +93,7 @@ sono entrate in vigore le regole correnti, nel finire del XIX secolo -
 registrato tramite diversi stili di notazione. Tutte le partite
 documentate in tale modo, dunque, rappresentano un'importante quantità di
 dati, da cui è possbile estrarre informazioni interessanti. 
-Elementi di interesse estraibili da tali dati potebbero riguardare la strategia di
+Elementi di interesse estraibili da tali dati potebbero riguardare: la strategia di
 gioco dei diversi scacchisti, la loro propensione al rischio, l'aggressività
 delle mosse giocate. Avere un'ontologia strutturata per classi,
 permette di avere una visione più chiara e ordinata di tali dati.
@@ -186,7 +195,256 @@ nella presente relazione o nella costruzione dell'ontologia.
 
 \chapter{Competency Questions}
 
+\begin{enumerate}
+  \item Quali sono le principali strategie scacchistiche considerate
+\textit{aggressive}?
 
+\item Quante partite ha vinto il giocatore [X]? 
+
+\item Chi è stato l'ultimo vincitore del torneo [X]?
+
+\item Quale giocatore ha vinto più partite usando la strategia [X]?
+  
+\item Chi è la/lo scacchista con il punteggio Elo più alto?
+
+\end{enumerate}
+
+
+\chapter{Documentazione}
+
+Essendo un gioco presente da diversi secoli, è presente moltissima
+documentazione e altrettanti dati riguardanti statistiche e partite
+giocate. L'organizzazione e l'accessibilità di tale mole di dati è uno degli scopi della
+presente ontologia. Uno dei documenti principali, e gerarchicamente il
+più importante, è certamente l'\textit{handbook} redatto dalla FIDE,
+contenente le regole di gioco. In esso si trovano:
+\begin{itemize}
+
+  \item Gli obiettivi delle partite
+  \item Come sono strutturate le scacchiere
+  \item Quali pezzi hanno a disposizione i giocatori
+  \item La configurazione iniziale di tali pezzi
+  \item Le regole di movimento dei pezzi
+  \item Le regole riguardo l'alternarsi dei turni
+  \item Quali sono le possibili condizioni di terminazione di una
+    partita
+
+\end{itemize}, 
+
+
+Ad esempio, il punto 1.2 di tale handbook cita: "\textit{The objective of each player is to place the opponent’s king ‘under attack’ in such a way
+that the opponent has no legal move. The player who achieves this goal is said to have
+‘checkmated’ the opponent’s king and to have won the game. Leaving one’s own king
+under attack, exposing one’s own king to attack and also ’capturing’ the opponent’s king
+are not allowed. The opponent whose king has been checkmated has lost
+the game.}"
+
+\begin{figure}[h]
+  \caption{Pezzi a disposizione di ogni giocatore ad inizio partita.}
+  \centering
+  \label{fig:pezzi_inizio}
+  \includegraphics[scale=.6]{~/Pictures/Screenshots/Screenshot_20240103_145340.png}
+\end{figure} 
+
+\begin{figure}[h]
+  \caption{Posizione iniziale dei vari pezzi}
+  \centering
+  \label{fig:inizio_scacchiera}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240103_145429.png}
+\end{figure} 
+
+Viene inoltre descritta la situazione iniziale di ogni partita, come
+si denota nelle immagini \ref{fig:pezzi_inizio} e \ref{fig:inizio_scacchiera}.
+
+In aggiunta a tali informazioni basilari del gioco, vengono aggiunte
+specifiche riguardanti le competizioni ufficiali ed i tornei, quali:
+
+\begin{itemize}
+  \item la regolamentazione del tempo a disposizione dei
+    giocatori, 
+  \item la gestione delle mosse irregolari, 
+  \item la registrazione delle varie mosse giocate, 
+  \item l'assegnazione dei punteggi.
+  \item il codice di condotta che i giocatori devono mantenere durante
+    partite di tornei ufficiali.
+
+\end{itemize}
+
+Ad esempio, per quanto riguarda i sistemi di punteggio ufficiali,
+l'handbook afferma, nella regola 11.1, che: "\textit{Unless announced otherwise in advance, a player who wins his game, or wins by forfeit,
+scores one point (1), a player who loses his game, or forfeits scores no points (0) and a
+player who draws his game scores a half point (½).}"
+
+Infine, sono presenti appendici estremamente importanti, fra cui le
+regole di gioco quando partecipano ad una partita giocatori con 
+disabilità visive. Qui vengono,
+infatti, definite in modo preciso come devono essere fatte le
+scacchiere ausiliarie e come va modificata la notazione riguardante le
+righe e le colonne della scacchiera. La scacchiera per il giocatore
+affetto da handicap visivo, infatti, deve:
+
+\begin{itemize}
+  \item Essere grande almeno 20 cm per 20 cm
+  \item Le caselle nere devono essere in rilievo
+  \item Devono essere dotate di sicura per i pezzi, che permette di
+    determinare quanto un pezzo deve obbligatoriamente essere mosso
+  \item Ogni pezzo deve essere dotato di un perno che gli permetta di
+    essere correttamente inserito nella sicura di cui sopra
+  \item Ogni pezzo deve essere realizzato con un design di tipo
+    Staunton, come si vede in immagine \ref{fig:pezzi_staunton}
+\end{itemize}
+
+\begin{figure}[h]
+  \caption{Staunton Chess Set. Pezzi standad per i tornei, obbligatori
+  quando una partita si disputa con almeno un giocatore affetto da handicap visivi.}
+  \centering
+  \label{fig:pezzi_staunton}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/400px-JaquesCookStaunton.jpg}
+\end{figure} 
+
+In aggiunta alla conformazione delle scacchiere, viene anche espresso
+esattamente come deve procedere il gioco. La regola 1 dell'appendice E
+sezione 2, afferma infatti che: "\textit{The moves shall be announced clearly, repeated by the opponent and executed on his
+chessboard. When promoting a pawn, the player must announce which piece is
+chosen.}" Vengono inoltre aggiunti suggerimenti su come riferirsi alle
+traverse e alle colonne della scacchiera, in alternativa alle semplici
+lettere e numeri. Devono inoltre essere presenti orologi speciali per
+le persone affette da handicap visivi, che permettano di controllare
+il tempo tramite dei punti e delle tacche in rilievo.
+
+Oltre all'handbook della FIDE, un'altra importantissima fonte di
+informazioni è il popolarissimo sito di scacchi online
+\textit{chess.com}. Come si evince dallo screenshot
+\ref{fig:chess.com_1}, nella prima schermata che viene mostrata è
+possibile giocare contro altri utenti, contro il computer, oppure di
+far generare una scacchiera con cui poter giocare con qualcun altro
+fisicamente presente con noi.
+
+\begin{figure}[h]
+  \caption{Screenshots della homepage di chess.com}
+  \centering
+  \label{fig:chess.com_1}
+  \includegraphics[scale=.4]{~/Pictures/Screenshots/Screenshot_20240103_152508.png}
+\end{figure} 
+
+Nel secondo screenshot \ref{fig:chess.com_2} è possibile vedere il
+menù offerto dall'applicazione, in cui sono presenti, oltre alle varie
+modalità di gioco descritte precedentemente, un nutrito insieme di
+possibilità:
+\begin{itemize}
+  \item È possibile fare \textit{puzzle}, ovvero risolvere
+    situazioni di scacchi in cui è necessario trovare la mossa
+    vincente, o la sequenza di mosse vincenti, per il giocatore bianco
+    o per il giocatore nero.
+  \item È presente una sezione \textit{learn}, in cui sono video ed
+    articoli educativi riguardo le basi e le varie fasi di gioco,
+    quali aperture, mediogioco e finali.
+  \item È possibile vedere partite di altri giocatori in diretta,
+    specialmente quelle dei giocatori più forti e famosi
+  \item È presente una sezione di \textit{news} dell'ambito
+  \item È presente anche una sezione \textit{Social}, in cui è
+    possibile condividere i propri risultati e fare riferimento a
+    personalità rilevanti del gioco anche su social network.
+\end{itemize}
+
+\begin{figure}[h]
+  \caption{Screenshot 2 di chess.com, menù delle varie opzioni.}
+  \centering
+  \label{fig:chess.com_2}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240103_152518.png}
+\end{figure}
+
+Nella sezione \textit{news} di chess.com, è presente un articolo da
+cui ho estratto le informazioni contenute nell'A-Box relative alla
+partita di finale del campionato del mondo 2023, ovvero la partita
+tenuta fra Ding Liren e Ian Nepomniachtchi.
+
+Le ontologie su cui sono allineati alcuni concetti sono
+\textit{Wikidata}, su cui sono stati allineati i concetti di
+\textit{Scacchista e Paesi (ospitanti)}, mentre la \textit{BBC Sport
+Ontology} è stata usata per allineare il concetto di
+\textit{Partita/Match}.
+
+
+\begin{figure}[h]
+  \caption{Infobox Wikipedia per il gioco degli scacchi.}
+  \centering
+  \label{fig:infobox_wikipedia}
+  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240123_155106.png}
+\end{figure} 
+
+
+In figura \ref{fig:infobox_wikipedia} è possibile vedere l'infobox
+relativo alla pagina wikipedia per il gioco degli scacchi.
+
+Riferimenti:
+\begin{itemize}
+
+  \item \url{https://www.fide.com/FIDE/handbook/LawsOfChess.pdf}
+  \item \url{https://en.wikipedia.org/wiki/Staunton_chess_set}
+  \item \url{https://www.chess.com/}
+  \item \url{https://www.wikidata.org/wiki/Wikidata:Main_Page}
+  \item \url{https://www.bbc.co.uk/ontologies/sport-ontology/}
+  \item \url{https://en.wikipedia.org/wiki/Chess}
+  \item \url{https://www.chess.com/news/view/fide-world-chess-championship-2023-tiebreak-ding-liren}
+
+\end{itemize}
+
+
+\chapter{LODE}
+
+La documentazione dell'ontologia è stata generata tramite lo strumento
+LODE. La documentazione è presente al seguente link 
+
+\begin{tcolorbox}[]
+
+\url{http://150.146.207.114/lode/extract?url=https%3A%2F%2Fraw.githubusercontent.com%2Fleno3003%2Fprogetto_modsem_2023%2Fmain%2Fcodice%2Fprogetto.rdf&owlapi=true&imported=true&reasoner=true&lang=it}.
+
+\end{tcolorbox}
+
+Verrà inoltre allegata una versione salvata della webpage
+all'archivio del presente progetto.
+
+\chapter{Visualizzazione}
+
+\section{Tassonomia delle classi}
+\begin{figure}[h]
+  \caption{Tassonomia delle classi.}
+  \centering
+  \label{fig:tassonomia}
+  \includegraphics[scale=0.8]{~/Pictures/Screenshots/Screenshot_20240123_165004.png}
+\end{figure} 
+
+In figura \ref{fig:tassonomia} è possibile vedere la tassonomia delle
+delle classi dell'ontologia.
+
+\section{Template e Knowledge Graph}
+
+\section{Triple in forma tabellare}
+
+Nella seguente tabella è possibile individuare le triple riguardo la
+finale del campionato del mondo di scacchi del 2023, in particolare la
+partita disputata fra Ding Liren e Ian Nepomniachtchi.
+
+\begin{center}
+\begin{tabular}{||c c c||} 
+ \hline
+ Soggetto & Predicato & Oggetto \\ [0.5ex] 
+ \hline\hline
+ Ian Nepomniachtchi & Type & ScacchistaProfessionista\\ 
+ \hline
+ Ding Liren & Type & ScacchistaProfessionista \\ 
+ \hline
+ Ian Nepomniachtchi & giocatoreGiocaPartita &
+ partitaNepomniachtchiLiren\\ 
+ \hline
+ Ding Liren & giocatoreGiocaPartita &
+ partitaNepomniachtchiLiren\\ 
+ \hline
+ partitaNepomniachtchiLiren & partitaDiTorneo & WorldChampionship2023\\ 
+ \hline
+\end{tabular}
+\end{center}
 
 
 \chapter{Flusso di utilizzo e Mockup}
@@ -247,8 +505,8 @@ presenti nelle immagini \ref{fig:scacchisti}, \ref{fig:tornei} e \ref{fig:strate
 
 \chapter{Query SPARQL}
 
-1 - Quali sono le principali strategie scacchistiche considerate
-\textit{aggressive}?
+\section{1 - Quali sono le principali strategie scacchistiche considerate
+\textit{aggressive}?}
 
 \begin{verbatim}
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -279,7 +537,7 @@ I dati ottenuti da tale query sono mostrati in figura \ref{fig:query1}.
   \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_174014.png}
 \end{figure} 
 
-2 - Quante partite ha vinto 'Ding Liren'?
+\section{2 - Quante partite ha vinto 'Ding Liren'?}
 
 \begin{verbatim}
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -311,8 +569,8 @@ viene conteggiata solo essa.
   \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_174230.png}
 \end{figure} 
 
-3 - Chi è stato l'ultimo vincitore del torneo Chess Olimpyads For
-People with Disabilities?
+\section{3 - Chi è stato l'ultimo vincitore del torneo Chess Olimpyads For
+People with Disabilities?}
 
 \begin{verbatim}
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -344,7 +602,7 @@ I dati ottenuti da tale query sono mostrati in figura \ref{fig:query3}.
   \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_174642.png}
 \end{figure} 
 
-4 - Quale giocatore ha vinto più partite usando la difesa siciliana?
+\section{4 - Quale giocatore ha vinto più partite usando la difesa siciliana?}
 
 \begin{verbatim}
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -379,7 +637,7 @@ I dati ottenuti da tale query sono mostrati in figura \ref{fig:query4}.
   \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_175016.png}
 \end{figure} 
 
-5 - Chi è la/lo scacchista con il punteggio Elo più alto?
+\section{5 - Chi è la/lo scacchista con il punteggio Elo più alto?}
 
 \begin{verbatim}
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -410,158 +668,6 @@ I dati ottenuti da tale query sono mostrati in figura \ref{fig:query5}.
   \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_175302.png}
 \end{figure} 
 
-\chapter{Documentazione}
-
-Essendo un gioco presente da diversi secoli, è presente moltissima
-documentazione e altrettanti dati riguardanti statistiche e partite
-giocate. L'organizzazione e l'accessibilità di tale mole di dati è uno degli scopi della
-presente ontologia. Uno dei documenti principali, e gerarchicamente il
-più importante, è certamente l'\textit{handbook} redatto dalla FIDE,
-contenente le regole di gioco. In esso si trovano:
-\begin{itemize}
-
-  \item Gli obiettivi delle partite
-  \item Come sono strutturate le scacchiere
-  \item Quali pezzi hanno a disposizione i giocatori
-  \item La configurazione iniziale di tali pezzi
-  \item Le regole di movimento dei pezzi
-  \item Le regole riguardo l'alternarsi dei turni
-  \item Quali sono le possibili condizioni di terminazione di una
-    partita
-
-\end{itemize}, 
-
-
-Ad esempio, il punto 1.2 di tale handbook cita: "\textit{The objective of each player is to place the opponent’s king ‘under attack’ in such a way
-that the opponent has no legal move. The player who achieves this goal is said to have
-‘checkmated’ the opponent’s king and to have won the game. Leaving one’s own king
-under attack, exposing one’s own king to attack and also ’capturing’ the opponent’s king
-are not allowed. The opponent whose king has been checkmated has lost
-the game.}"
-
-\begin{figure}[h]
-  \caption{Pezzi a disposizione di ogni giocatore ad inizio partita.}
-  \centering
-  \label{fig:pezzi_inizio}
-  \includegraphics[scale=.6]{~/Pictures/Screenshots/Screenshot_20240103_145340.png}
-\end{figure} 
-
-\begin{figure}[h]
-  \caption{Posizione iniziale dei vari pezzi}
-  \centering
-  \label{fig:inizio_scacchiera}
-  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240103_145429.png}
-\end{figure} 
-
-Viene inoltre descritta la situazione iniziale di ogni partita, come
-si denota nelle immagini \ref{fig:pezzi_inizio} e \ref{fig:inizio_scacchiera}.
-
-In aggiunta a tali informazioni basilari del gioco, vengono aggiunte
-specifiche riguardanti le competizioni ufficiali ed i torne, quali:
-
-\begin{itemize}
-  \item la regolamentazione del tempo a disposizione dei
-    giocatori, 
-  \item la gestione delle mosse irregolari, 
-  \item la registrazione delle varie mosse giocate, 
-  \item l'assegnazione dei punteggi.
-  \item il codice di condotta che i giocatori devono mantenere durante
-    partite di tornei ufficiali.
-
-\end{itemize}
-
-Ad esempio, per quanto riguarda i sistemi di punteggio ufficiali,
-l'handbook afferma, nella regola 11.1, che: "\textit{Unless announced otherwise in advance, a player who wins his game, or wins by forfeit,
-scores one point (1), a player who loses his game, or forfeits scores no points (0) and a
-player who draws his game scores a half point (½).}"
-
-Infine, sono presenti appendici estremamente importanti, fra cui le
-regole le regole di gioco quando partecipano ad una partita i giocatori con 
-disabilità visive. Qui vengono,
-infatti, definite in modo preciso come devono essere fatte le
-scacchiere ausiliarie e come va modificata la notazione riguardante le
-righe e le colonne della scacchiera. La scacchiera per il giocatore
-affetto da handicap visivo, infatti, deve:
-
-\begin{itemize}
-  \item Essere grande almeno 20 cm per 20 cm
-  \item Le caselle nere devono essere in rilievo
-  \item Devono essere dotate di sicura per i pezzi, che permette di
-    determinare quanto un pezzo deve obbligatoriamente essere mosso
-  \item Ogni pezzo deve essere dotato di un perno che gli permetta di
-    essere correttamente inserito nella sicura di cui sopra
-  \item Ogni pezzo deve essere realizzato con un design di tipo
-    Staunton, come si vede in immagine \ref{fig:pezzi_staunton}
-\end{itemize}
-
-\begin{figure}[h]
-  \caption{Staunton Chess Set. Pezzi standad per i tornei, obbligatori
-  quando una partita si disputa con almeno un giocatore affetto da handicap visivi.}
-  \centering
-  \label{fig:pezzi_staunton}
-  \includegraphics[scale=1]{~/Pictures/Screenshots/400px-JaquesCookStaunton.jpg}
-\end{figure} 
-
-In aggiunta alla conformazione delle scacchiere, viene anche espresso
-esattamente come deve procedere il gioco. La regola 1 dell'appendice E
-sezione 2, afferma infatti che: "\textit{The moves shall be announced clearly, repeated by the opponent and executed on his
-chessboard. When promoting a pawn, the player must announce which piece is
-chosen.}" Vengono inoltre aggiunti suggerimenti su come riferirsi alle
-traverse e alle colonne della scacchiera, in alternativa alle semplici
-lettere e numeri. Devono inoltre essere presenti orologi speciali per
-le persone affette da handicap visivi, che permettano di controllare
-il tempo tramite dei punti e delle tacche in rilievo.
-
-Oltre all'handbook della FIDE, un'altra importantissima fonte di
-informazioni è il popolaissimo sito di scacchi online
-\textit{chess.com}. Come si evince dallo screenshot
-\ref{fig:chess.com_1}, nella prima schermata che viene mostrata è
-possibile giocare contro altri utenti, contro il computer, oppure di
-far generare una scacchiera con cui poter giocare con qualcun altro
-fisicamente presente con noi.
-
-\begin{figure}[h]
-  \caption{Screenshots della homepage di chess.com}
-  \centering
-  \label{fig:chess.com_1}
-  \includegraphics[scale=.5]{~/Pictures/Screenshots/Screenshot_20240103_152508.png}
-\end{figure} 
-
-Nel secondo screenshot \ref{fig:chess.com_2} è possibile vedere il
-menù offerto dall'applicazione, in cui sono presenti, oltre alle varie
-modalità di gioco descritte precedentemente, un nutrito insieme di
-possibilità:
-\begin{itemize}
-  \item È possibile fare \textit{puzzle}, ovvero risolvere
-    situazioni di scacchi in cui è necessario trovare la mossa
-    vincente, o la sequenza di mosse vincenti, per il giocatore bianco
-    o per il giocatore nero.
-  \item È presente una sezione \textit{learn}, in cui sono video ed
-    articoli educativi riguardo le basi e le varie fasi di gioco,
-    quali aperture, mediogioco e finali.
-  \item È possibile vedere partite di altri giocatori in diretta,
-    specialmetne quelle dei giocatori più forti e famosi
-  \item È presente una sezione di \textit{news} dell'ambito
-  \item È presente anche una sezione \textit{Social}, in cui è
-    possibile condividere i propri risultati e fare riferimento a
-    personalità rilevanti del gioco anche su social network.
-\end{itemize}
-
-\begin{figure}[h]
-  \caption{Screenshot 2 di chess.com, menù delle varie opzioni.}
-  \centering
-  \label{fig:chess.com_2}
-  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240103_152518.png}
-\end{figure}
-
-Riferimenti:
-\begin{itemize}
-
-  \item \url{https://www.fide.com/FIDE/handbook/LawsOfChess.pdf}
-  \item \url{https://en.wikipedia.org/wiki/Staunton_chess_set}
-  \item \url{https://www.chess.com/}
-
-\end{itemize}
 
 \chapter{Regole SWRL}
 
@@ -570,7 +676,9 @@ permettano di inferire informazioni ulteriori a quelle ottenibili dal
 reasoner presente in Protegè.
 Seguono le regole swirl con relativa giustificazione.
 
-1 - Aggiungo alla sottoclasse $Scacchista$ una classe
+\section{Regola 1}
+
+Aggiungo alla sottoclasse $Scacchista$ una classe
 $ScacchistaVittoriosu$, in cui inserire tutte le istanze della classe
 scacchista che abbiano vinto almeno un torneo internazionale.
 La regola è definita come segue:
@@ -581,7 +689,9 @@ scacchi2023:Scacchista(?x) ^ scacchi2023:vincitorePartita(?x, ?y)
 
 \end{verbatim}
 
-2 - È stata aggiunta la sottoclasse $WorldChampion$ alla classe
+\section{Regola 2}
+
+È stata aggiunta la sottoclasse $WorldChampion$ alla classe
 $ScacchistaProfessionista$, con il fine di identificare tutti le/gli
 scacchisti che abbiano vinto almeno un campionato del mondo, ovvero
 un torneo ufficiale internazionale appartenente alla classe
@@ -594,7 +704,9 @@ scacchi2023:ScacchistaProfessionista(?x) ^ scacchi2023:WorldChampionship(?t)
 
 \end{verbatim}
 
-3 - La presente regola, e le successive due, hanno lo scopo di
+\section{Regola 3}
+
+La presente regola, e le successive due, hanno lo scopo di
 categorizzare secondo i ranking e rating ufficiali della FIDE, tutti
 le/gli scacchiste/i professioniste/i, in relazione al loro punteggio ELO.
 Abbiamo infatti, secondo regolamento ufficiale, che:
@@ -616,7 +728,9 @@ scacchi2023:punteggioElo(?x, ?punteggio) ^
 swrlb:greaterThan(?punteggio, 2300) -> scacchi2023:FM(?x)
 \end{verbatim}
 
-4 - Maestro Internazionale
+\section{Regola 4}
+
+Maestro Internazionale
 
 \begin{verbatim}
 scacchi2023:ScacchistaProfessionista(?x) ^
@@ -624,22 +738,14 @@ scacchi2023:punteggioElo(?x, ?punteggio) ^
 swrlb:greaterThan(?punteggio, 2400) -> scacchi2023:IM(?x)
 \end{verbatim}
 
-5 - Gran Maestro
+\section{Regola 5}
+
+Gran Maestro
 
 \begin{verbatim}
 scacchi2023:ScacchistaProfessionista(?x) ^
 scacchi2023:punteggioElo(?x, ?punteggio) ^
 swrlb:greaterThan(?punteggio, 2500) -> scacchi2023:GM(?x)
 \end{verbatim}
-
-
-\chapter{LODE}
-
-La documentazione dell'ontologia è stata generata tramite lo strumento
-LODE. La documentazione è presente al seguente link \url{http://150.146.207.114/lode/extract?url=https%3A%2F%2Fraw.githubusercontent.com%2Fleno3003%2Fprogetto_modsem_2023%2Fmain%2Fcodice%2Fprogetto.rdf&owlapi=true&imported=true&reasoner=true&lang=it}.
-Verrà inoltre allegata una versione salvata della webpage
-all'archivio del presente progetto.
-
-\chapter{Visualizzazione}
 
 \end{document}

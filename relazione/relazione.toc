@@ -1,15 +1,29 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
-\contentsline {chapter}{\numberline {1}Motivazioni}{5}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Requirements}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Finalità dell'ontologia}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Task dell'ontologia}{8}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Utenti dell'ontologia}{8}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Descrizione del dominio}{9}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Competency Questions}{13}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Flusso di utilizzo e Mockup}{15}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Query SPARQL}{21}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Documentazione}{27}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Regole SWRL}{33}{chapter.8}%
-\contentsline {chapter}{\numberline {9}LODE}{35}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Visualizzazione}{37}{chapter.10}%
+\contentsline {chapter}{\numberline {1}Disclaimer}{5}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Motivazioni}{7}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Requirements}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Finalità dell'ontologia}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Task dell'ontologia}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Utenti dell'ontologia}{10}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Descrizione del dominio}{11}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Competency Questions}{15}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Documentazione}{17}{chapter.6}%
+\contentsline {chapter}{\numberline {7}LODE}{25}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Visualizzazione}{27}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Tassonomia delle classi}{27}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Template e Knowledge Graph}{27}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Triple in forma tabellare}{27}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Flusso di utilizzo e Mockup}{29}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Query SPARQL}{35}{chapter.10}%
+\contentsline {section}{\numberline {10.1}1 - Quali sono le principali strategie scacchistiche considerate \textit {aggressive}?}{35}{section.10.1}%
+\contentsline {section}{\numberline {10.2}2 - Quante partite ha vinto 'Ding Liren'?}{36}{section.10.2}%
+\contentsline {section}{\numberline {10.3}3 - Chi è stato l'ultimo vincitore del torneo Chess Olimpyads For People with Disabilities?}{37}{section.10.3}%
+\contentsline {section}{\numberline {10.4}4 - Quale giocatore ha vinto più partite usando la difesa siciliana?}{37}{section.10.4}%
+\contentsline {section}{\numberline {10.5}5 - Chi è la/lo scacchista con il punteggio Elo più alto?}{39}{section.10.5}%
+\contentsline {chapter}{\numberline {11}Regole SWRL}{41}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Regola 1}{41}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Regola 2}{41}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Regola 3}{42}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Regola 4}{42}{section.11.4}%
+\contentsline {section}{\numberline {11.5}Regola 5}{42}{section.11.5}%
