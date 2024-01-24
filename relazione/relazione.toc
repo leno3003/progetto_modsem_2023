@@ -12,18 +12,18 @@
 \contentsline {chapter}{\numberline {7}LODE}{25}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Visualizzazione}{27}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Tassonomia delle classi}{27}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Template e Knowledge Graph}{27}{section.8.2}%
+\contentsline {section}{\numberline {8.2}Template Usato}{27}{section.8.2}%
 \contentsline {section}{\numberline {8.3}Triple in forma tabellare}{27}{section.8.3}%
-\contentsline {chapter}{\numberline {9}Flusso di utilizzo e Mockup}{29}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Query SPARQL}{35}{chapter.10}%
-\contentsline {section}{\numberline {10.1}1 - Quali sono le principali strategie scacchistiche considerate \textit {aggressive}?}{35}{section.10.1}%
-\contentsline {section}{\numberline {10.2}2 - Quante partite ha vinto 'Ding Liren'?}{36}{section.10.2}%
-\contentsline {section}{\numberline {10.3}3 - Chi è stato l'ultimo vincitore del torneo Chess Olimpyads For People with Disabilities?}{37}{section.10.3}%
-\contentsline {section}{\numberline {10.4}4 - Quale giocatore ha vinto più partite usando la difesa siciliana?}{37}{section.10.4}%
-\contentsline {section}{\numberline {10.5}5 - Chi è la/lo scacchista con il punteggio Elo più alto?}{39}{section.10.5}%
-\contentsline {chapter}{\numberline {11}Regole SWRL}{41}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Regola 1}{41}{section.11.1}%
-\contentsline {section}{\numberline {11.2}Regola 2}{41}{section.11.2}%
-\contentsline {section}{\numberline {11.3}Regola 3}{42}{section.11.3}%
-\contentsline {section}{\numberline {11.4}Regola 4}{42}{section.11.4}%
-\contentsline {section}{\numberline {11.5}Regola 5}{42}{section.11.5}%
+\contentsline {chapter}{\numberline {9}Flusso di utilizzo e Mockup}{31}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Query SPARQL}{37}{chapter.10}%
+\contentsline {section}{\numberline {10.1}1 - Quali sono le principali strategie scacchistiche considerate \textit {aggressive}?}{37}{section.10.1}%
+\contentsline {section}{\numberline {10.2}2 - Quante partite ha vinto 'Ding Liren'?}{38}{section.10.2}%
+\contentsline {section}{\numberline {10.3}3 - Chi è stato l'ultimo vincitore del torneo Chess Olimpyads For People with Disabilities?}{39}{section.10.3}%
+\contentsline {section}{\numberline {10.4}4 - Quale giocatore ha vinto più partite usando la difesa siciliana?}{39}{section.10.4}%
+\contentsline {section}{\numberline {10.5}5 - Chi è la/lo scacchista con il punteggio Elo più alto?}{41}{section.10.5}%
+\contentsline {chapter}{\numberline {11}Regole SWRL}{43}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Regola 1}{43}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Regola 2}{43}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Regola 3}{44}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Regola 4}{44}{section.11.4}%
+\contentsline {section}{\numberline {11.5}Regola 5}{44}{section.11.5}%
