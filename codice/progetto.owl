@@ -15,6 +15,7 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
     <Prefix name="vann" IRI="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:"/>
+    <Prefix name="bbcso" IRI="https://www.bbc.co.uk/ontologies/sport-ontology"/>
     <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
     <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
     <Prefix name="scacchi2023" IRI="http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#"/>
@@ -133,6 +134,12 @@
     </Declaration>
     <Declaration>
         <Class IRI="https://www.wikidata.org/wiki/Q6256"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#elementoDi"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#giocatoreGiocaPartita"/>
@@ -805,6 +812,10 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">60</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#elementoDi"/>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#strategiaPartitaNero"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -826,6 +837,17 @@
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#torneoContienePartita"/>
     </InverseFunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#elementoDi"/>
+        <Class IRI="#Strategia"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#giocatoreGiocaPartita"/>
         <Class IRI="#Scacchista"/>
@@ -866,6 +888,14 @@
         <ObjectProperty IRI="#vincitoreTorneo"/>
         <Class IRI="#Scacchista"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#elementoDi"/>
+        <Class IRI="#Partita"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#giocatoreGiocaPartita"/>
         <Class IRI="#Partita"/>
