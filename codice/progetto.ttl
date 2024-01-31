@@ -55,6 +55,10 @@ vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 vann:preferredNamespaceURI rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -70,14 +74,18 @@ vann:preferredNamespaceURI rdf:type owl:AnnotationProperty .
 scacchi2023:elementoDi rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf> ;
                        rdfs:domain scacchi2023:Strategia ;
-                       rdfs:range scacchi2023:Partita .
+                       rdfs:range scacchi2023:Partita ;
+                       rdfs:comment "Collegamento fra strategia e partita. Legame transitivo per permettere di capire quali strategie sono state giocate in un certo torneo."@it ;
+                       rdfs:label "elementoDi"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita
 scacchi2023:giocatoreGiocaPartita rdf:type owl:ObjectProperty ;
                                   owl:inverseOf scacchi2023:partitaGiocataDaGiocatore ;
                                   rdfs:domain scacchi2023:Scacchista ;
-                                  rdfs:range scacchi2023:Partita .
+                                  rdfs:range scacchi2023:Partita ;
+                                  rdfs:comment "Collegamento fra giocatore e partita giocata."@it ;
+                                  rdfs:label "giocatoreGiocaPartita"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatorePartecipaTorneo
@@ -86,13 +94,17 @@ scacchi2023:giocatorePartecipaTorneo rdf:type owl:ObjectProperty ;
                                      rdfs:range scacchi2023:Torneo ;
                                      owl:propertyChainAxiom ( scacchi2023:giocatoreGiocaPartita
                                                               scacchi2023:partitaDiTorneo
-                                                            ) .
+                                                            ) ;
+                                     rdfs:comment "Property chain fra giocatore e torneo tramite la partita giocata, appartenente ad un certo torneo."@it ;
+                                     rdfs:label "giocatorePartecipaTorneo"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#paeseOspitaTorneo
 scacchi2023:paeseOspitaTorneo rdf:type owl:ObjectProperty ;
                               rdfs:domain scacchi2023:PaesiOspitanti ;
-                              rdfs:range scacchi2023:Torneo .
+                              rdfs:range scacchi2023:Torneo ;
+                              rdfs:comment "Collegamento fra paese e torneo che il paese ospita"@it ;
+                              rdfs:label "paeseOspitaTorneo"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaDiTorneo
@@ -100,46 +112,60 @@ scacchi2023:partitaDiTorneo rdf:type owl:ObjectProperty ;
                             owl:inverseOf scacchi2023:torneoContienePartita ;
                             rdf:type owl:FunctionalProperty ;
                             rdfs:domain scacchi2023:Partita ;
-                            rdfs:range scacchi2023:Torneo .
+                            rdfs:range scacchi2023:Torneo ;
+                            rdfs:comment "Collegamento fra partita ed il torneo in cui tale partita è stata giocata."@it ;
+                            rdfs:label "partitaDiTorneo"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaGiocataDaGiocatore
 scacchi2023:partitaGiocataDaGiocatore rdf:type owl:ObjectProperty ;
                                       rdfs:domain scacchi2023:Partita ;
-                                      rdfs:range scacchi2023:Scacchista .
+                                      rdfs:range scacchi2023:Scacchista ;
+                                      rdfs:comment "Relazione inversa di giocatoreGiocaPartita"@it ;
+                                      rdfs:label "partitaGiocataDaGiocatore"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#strategiaPartitaBianco
 scacchi2023:strategiaPartitaBianco rdf:type owl:ObjectProperty ;
                                    rdfs:domain scacchi2023:Strategia ;
-                                   rdfs:range scacchi2023:Partita .
+                                   rdfs:range scacchi2023:Partita ;
+                                   rdfs:comment "strategia adottata dal giocatore bianco in una specifica partita"@it ;
+                                   rdfs:label "strategiaPartitaBianco"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#strategiaPartitaNero
 scacchi2023:strategiaPartitaNero rdf:type owl:ObjectProperty ;
                                  rdfs:subPropertyOf owl:topObjectProperty ;
                                  rdfs:domain scacchi2023:Strategia ;
-                                 rdfs:range scacchi2023:Partita .
+                                 rdfs:range scacchi2023:Partita ;
+                                 rdfs:comment "Strategia adottata dal giocatore nero in una specifica partita."@it ;
+                                 rdfs:label "strategiaPartitaNero"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#torneoContienePartita
 scacchi2023:torneoContienePartita rdf:type owl:ObjectProperty ,
                                            owl:InverseFunctionalProperty ;
                                   rdfs:domain scacchi2023:Torneo ;
-                                  rdfs:range scacchi2023:Partita .
+                                  rdfs:range scacchi2023:Partita ;
+                                  rdfs:comment "Relazione inversa a partitaDiTorneo"@it ;
+                                  rdfs:label "torneoContienePartita"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitorePartita
 scacchi2023:vincitorePartita rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf owl:topObjectProperty ;
                              rdfs:domain scacchi2023:Scacchista ;
-                             rdfs:range scacchi2023:Partita .
+                             rdfs:range scacchi2023:Partita ;
+                             rdfs:comment "Giocatore che ha vinto una determinata partita"@it ;
+                             rdfs:label "vincitorePartita"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitoreTorneo
 scacchi2023:vincitoreTorneo rdf:type owl:ObjectProperty ;
                             rdfs:domain scacchi2023:Scacchista ;
-                            rdfs:range scacchi2023:Torneo .
+                            rdfs:range scacchi2023:Torneo ;
+                            rdfs:comment "Giocatore vincitore di un determinato torneo."@it ;
+                            rdfs:label "vincitoreTorneo"@it .
 
 
 #################################################################
@@ -149,19 +175,25 @@ scacchi2023:vincitoreTorneo rdf:type owl:ObjectProperty ;
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#annoTorneo
 scacchi2023:annoTorneo rdf:type owl:DatatypeProperty ;
                        rdfs:domain scacchi2023:Torneo ;
-                       rdfs:range xsd:int .
+                       rdfs:range xsd:int ;
+                       rdfs:comment "Anno in cui è stato disputato un determinato torneo."@it ;
+                       rdfs:label "annoTorneo"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#nomeCompleto
 scacchi2023:nomeCompleto rdf:type owl:DatatypeProperty ;
                          rdfs:domain scacchi2023:Scacchista ;
-                         rdfs:range xsd:string .
+                         rdfs:range xsd:string ;
+                         rdfs:comment "Nome completo di un determinato scacchista"@it ;
+                         rdfs:label "nomeCompleto"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#numeroPartecipanti
 scacchi2023:numeroPartecipanti rdf:type owl:DatatypeProperty ;
                                rdfs:domain scacchi2023:Torneo ;
-                               rdfs:range xsd:nonNegativeInteger .
+                               rdfs:range xsd:nonNegativeInteger ;
+                               rdfs:comment "Numero di partecipanti ad un determinato torneo"@it ;
+                               rdfs:label "numeroPartecipanti"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#punteggioElo
@@ -172,14 +204,17 @@ scacchi2023:punteggioElo rdf:type owl:DatatypeProperty ;
                                       owl:withRestrictions ( [ xsd:maxInclusive "4000"^^xsd:nonNegativeInteger
                                                              ]
                                                            )
-                                    ] .
+                                    ] ;
+                         rdfs:comment "Punteggio di valutazione di un determinato giocatore, usato per stilare le classifiche. Viene aggiornato dopo ogni match ufficiale."@it ;
+                         rdfs:label "punteggioElo"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#tempoPerGiocatore
 scacchi2023:tempoPerGiocatore rdf:type owl:DatatypeProperty ;
                               rdfs:domain scacchi2023:PartitaUfficiale ;
                               rdfs:range xsd:nonNegativeInteger ;
-                              rdfs:comment "Tempo iniziale per ciascun giocatore durante la partita. L'unità di misura è minuti." .
+                              rdfs:comment "Tempo iniziale per ciascun giocatore durante la partita. L'unità di misura è minuti."@it ;
+                              rdfs:label "tempoPerGiocare"@it .
 
 
 #################################################################
@@ -445,23 +480,25 @@ scacchi2023:WorldChampionship rdf:type owl:Class ;
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#AleksandraGoryachkina
 scacchi2023:AleksandraGoryachkina rdf:type owl:NamedIndividual ,
                                            scacchi2023:ScacchistaProfessionista ;
-                                  rdfs:label "AleksandraGoryachkina" .
+                                  rdfs:label "AleksandraGoryachkina"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Azerbaijan
 scacchi2023:Azerbaijan rdf:type owl:NamedIndividual ,
                                 scacchi2023:PaesiOspitanti ;
-                       rdfs:label "Azerbaijan" .
+                       rdfs:label "Azerbaijan"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ChessOlympiadsForPeopleWithDisabilities2023
 scacchi2023:ChessOlympiadsForPeopleWithDisabilities2023 rdf:type owl:NamedIndividual ,
-                                                                 scacchi2023:TorneoInternazionale .
+                                                                 scacchi2023:TorneoInternazionale ;
+                                                        rdfs:label "ChessOlympiadsForPeopleWithDisabilities2023"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#China
 scacchi2023:China rdf:type owl:NamedIndividual ,
-                           scacchi2023:PaesiOspitanti .
+                           scacchi2023:PaesiOspitanti ;
+                  rdfs:label "China"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#DingLiren
@@ -469,156 +506,185 @@ scacchi2023:DingLiren rdf:type owl:NamedIndividual ,
                                scacchi2023:ScacchistaProfessionista ;
                       scacchi2023:vincitorePartita scacchi2023:partitaNepomniachtchiLirenWCC2023 ;
                       scacchi2023:vincitoreTorneo scacchi2023:WorldChampionShip2023 ;
-                      scacchi2023:nomeCompleto "Ding Liren" .
+                      scacchi2023:nomeCompleto "Ding Liren" ;
+                      rdfs:label "DingLiren"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#FabioCaruana
 scacchi2023:FabioCaruana rdf:type owl:NamedIndividual ,
                                   scacchi2023:ScacchistaProfessionista ;
                          scacchi2023:nomeCompleto "Fabio Caruana" ;
-                         scacchi2023:punteggioElo 2794 .
+                         scacchi2023:punteggioElo 2794 ;
+                         rdfs:label "FabioCaruana"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Germania
 scacchi2023:Germania rdf:type owl:NamedIndividual ,
-                              scacchi2023:PaesiOspitanti .
+                              scacchi2023:PaesiOspitanti ;
+                     rdfs:label "Germania"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HikaruNakamura
 scacchi2023:HikaruNakamura rdf:type owl:NamedIndividual ,
-                                    scacchi2023:ScacchistaProfessionista .
+                                    scacchi2023:ScacchistaProfessionista ;
+                           rdfs:label "HikaruNakamura"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HouYifan
 scacchi2023:HouYifan rdf:type owl:NamedIndividual ,
-                              scacchi2023:ScacchistaProfessionista .
+                              scacchi2023:ScacchistaProfessionista ;
+                     rdfs:label "HouYifan"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HumpyKoneru
 scacchi2023:HumpyKoneru rdf:type owl:NamedIndividual ,
-                                 scacchi2023:ScacchistaProfessionista .
+                                 scacchi2023:ScacchistaProfessionista ;
+                        rdfs:label "HumpyKoneru"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IanNepomniachtchi
 scacchi2023:IanNepomniachtchi rdf:type owl:NamedIndividual ,
-                                       scacchi2023:ScacchistaProfessionista .
+                                       scacchi2023:ScacchistaProfessionista ;
+                              rdfs:label "IanNepomniachtchi"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Inghilterra
 scacchi2023:Inghilterra rdf:type owl:NamedIndividual ,
-                                 scacchi2023:PaesiOspitanti .
+                                 scacchi2023:PaesiOspitanti ;
+                        rdfs:label "Inghilterra"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#JuWenjun
 scacchi2023:JuWenjun rdf:type owl:NamedIndividual ,
-                              scacchi2023:ScacchistaProfessionista .
+                              scacchi2023:ScacchistaProfessionista ;
+                     rdfs:label "JuWenjun"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Karpov
 scacchi2023:Karpov rdf:type owl:NamedIndividual ,
                             scacchi2023:ScacchistaProfessionista ;
-                   scacchi2023:giocatoreGiocaPartita scacchi2023:partitaKasparovKarpov .
+                   scacchi2023:giocatoreGiocaPartita scacchi2023:partitaKasparovKarpov ;
+                   rdfs:label "Karpov"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Kasparov
 scacchi2023:Kasparov rdf:type owl:NamedIndividual ,
                               scacchi2023:ScacchistaProfessionista ;
-                     scacchi2023:giocatoreGiocaPartita scacchi2023:partitaKasparovKarpov .
+                     scacchi2023:giocatoreGiocaPartita scacchi2023:partitaKasparovKarpov ;
+                     rdfs:label "Kasparov"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#KaterynaLagno
 scacchi2023:KaterynaLagno rdf:type owl:NamedIndividual ,
-                                   scacchi2023:ScacchistaProfessionista .
+                                   scacchi2023:ScacchistaProfessionista ;
+                          rdfs:label "KaterynaLagno"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Kazakhstan
 scacchi2023:Kazakhstan rdf:type owl:NamedIndividual ,
                                 scacchi2023:PaesiOspitanti ;
-                       scacchi2023:paeseOspitaTorneo scacchi2023:WorldChampionShip2023 .
+                       scacchi2023:paeseOspitaTorneo scacchi2023:WorldChampionShip2023 ;
+                       rdfs:label "Kazakhstan"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#LeiTingjie
 scacchi2023:LeiTingjie rdf:type owl:NamedIndividual ,
-                                scacchi2023:ScacchistaProfessionista .
+                                scacchi2023:ScacchistaProfessionista ;
+                       rdfs:label "LeiTingjie"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Lettonia
 scacchi2023:Lettonia rdf:type owl:NamedIndividual ,
-                              scacchi2023:PaesiOspitanti .
+                              scacchi2023:PaesiOspitanti ;
+                     rdfs:label "Lettonia"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#MagnusCarlsen
 scacchi2023:MagnusCarlsen rdf:type owl:NamedIndividual ,
-                                   scacchi2023:ScacchistaProfessionista .
+                                   scacchi2023:ScacchistaProfessionista ;
+                          rdfs:label "MagnusCarlsen"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#MarcinTazbir
 scacchi2023:MarcinTazbir rdf:type owl:NamedIndividual ,
                                   scacchi2023:ScacchistaProfessionista ;
                          scacchi2023:giocatoreGiocaPartita scacchi2023:partitaTzabirGroenfeld ;
-                         scacchi2023:punteggioElo 2425 .
+                         scacchi2023:punteggioElo 2425 ;
+                         rdfs:label "MarcinTazbir"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Netherlands
 scacchi2023:Netherlands rdf:type owl:NamedIndividual ,
-                                 scacchi2023:PaesiOspitanti .
+                                 scacchi2023:PaesiOspitanti ;
+                        rdfs:label "Netherlands"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Norvegia
 scacchi2023:Norvegia rdf:type owl:NamedIndividual ,
-                              scacchi2023:PaesiOspitanti .
+                              scacchi2023:PaesiOspitanti ;
+                     rdfs:label "Norvegia"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#RepubblicaCeca
 scacchi2023:RepubblicaCeca rdf:type owl:NamedIndividual ,
-                                    scacchi2023:PaesiOspitanti .
+                                    scacchi2023:PaesiOspitanti ;
+                           rdfs:label "RepubblicaCeca"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Romania
 scacchi2023:Romania rdf:type owl:NamedIndividual ,
-                             scacchi2023:PaesiOspitanti .
+                             scacchi2023:PaesiOspitanti ;
+                    rdfs:label "Romania"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Russia
 scacchi2023:Russia rdf:type owl:NamedIndividual ,
-                            scacchi2023:PaesiOspitanti .
+                            scacchi2023:PaesiOspitanti ;
+                   rdfs:label "Russia"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Serbia
 scacchi2023:Serbia rdf:type owl:NamedIndividual ,
                             scacchi2023:PaesiOspitanti ;
-                   scacchi2023:paeseOspitaTorneo scacchi2023:ChessOlympiadsForPeopleWithDisabilities2023 .
+                   scacchi2023:paeseOspitaTorneo scacchi2023:ChessOlympiadsForPeopleWithDisabilities2023 ;
+                   rdfs:label "Serbia"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#USA
 scacchi2023:USA rdf:type owl:NamedIndividual ,
-                         scacchi2023:PaesiOspitanti .
+                         scacchi2023:PaesiOspitanti ;
+                rdfs:label "USA"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WomensWorldCup2023
 scacchi2023:WomensWorldCup2023 rdf:type owl:NamedIndividual ,
-                                        scacchi2023:TorneoInternazionale .
+                                        scacchi2023:TorneoInternazionale ;
+                               rdfs:label "WomensWorldCup2023"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023
 scacchi2023:WorldChampionShip2023 rdf:type owl:NamedIndividual ,
                                            scacchi2023:WorldChampionship ;
-                                  scacchi2023:annoTorneo 2023 .
+                                  scacchi2023:annoTorneo 2023 ;
+                                  rdfs:label "WorldChampionShip2023"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldRapidTeamsChampionship2023
 scacchi2023:WorldRapidTeamsChampionship2023 rdf:type owl:NamedIndividual ,
-                                                     scacchi2023:TorneoInternazionale .
+                                                     scacchi2023:TorneoInternazionale ;
+                                            rdfs:label "WorldRapidTeamsChampionship2023"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldSchoolTeamChampionship2023
 scacchi2023:WorldSchoolTeamChampionship2023 rdf:type owl:NamedIndividual ,
-                                                     scacchi2023:TorneoInternazionale .
+                                                     scacchi2023:TorneoInternazionale ;
+                                            rdfs:label "WorldSchoolTeamChampionship2023"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldYouthU16ChessOlympiad2023
 scacchi2023:WorldYouthU16ChessOlympiad2023 rdf:type owl:NamedIndividual ,
-                                                    scacchi2023:TorneoInternazionale .
+                                                    scacchi2023:TorneoInternazionale ;
+                                           rdfs:label "WorldYouthU16ChessOlympiad2023"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#YehudaGroenfeld
@@ -628,45 +694,52 @@ scacchi2023:YehudaGroenfeld rdf:type owl:NamedIndividual ,
                             scacchi2023:vincitorePartita scacchi2023:partitaTzabirGroenfeld ;
                             scacchi2023:vincitoreTorneo scacchi2023:ChessOlympiadsForPeopleWithDisabilities2023 ;
                             scacchi2023:nomeCompleto "Yehuda Groenfeld" ;
-                            scacchi2023:punteggioElo 2391 .
+                            scacchi2023:punteggioElo 2391 ;
+                            rdfs:label "YehudaGroenfeld"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#aperturaSpagnola
 scacchi2023:aperturaSpagnola rdf:type owl:NamedIndividual ,
                                       scacchi2023:StrategiaDiPosizione ;
-                             rdfs:label "aperturaSpagnola" .
+                             rdfs:label "aperturaSpagnola"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaCaroKhan
 scacchi2023:difesaCaroKhan rdf:type owl:NamedIndividual ,
-                                    scacchi2023:StrategiaDiPosizione .
+                                    scacchi2023:StrategiaDiPosizione ;
+                           rdfs:label "difesaCaroKhan"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaSiciliana
 scacchi2023:difesaSiciliana rdf:type owl:NamedIndividual ,
                                      scacchi2023:StrategiaAggressiva ;
-                            scacchi2023:strategiaPartitaNero scacchi2023:partitaNepomniachtchiLirenWCC2023 .
+                            scacchi2023:strategiaPartitaNero scacchi2023:partitaNepomniachtchiLirenWCC2023 ;
+                            rdfs:label "difesaSiciliana"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#fianchettoDiAlfiere
 scacchi2023:fianchettoDiAlfiere rdf:type owl:NamedIndividual ,
-                                         scacchi2023:StrategiaAggressiva .
+                                         scacchi2023:StrategiaAggressiva ;
+                                rdfs:label "fianchettoDiAlfiere"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#gambettoDiDonna
 scacchi2023:gambettoDiDonna rdf:type owl:NamedIndividual ,
-                                     scacchi2023:StrategiaAggressiva .
+                                     scacchi2023:StrategiaAggressiva ;
+                            rdfs:label "gambettoDiDonna"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaItaliana
 scacchi2023:partitaItaliana rdf:type owl:NamedIndividual ,
                                      scacchi2023:Strategia ;
-                            scacchi2023:strategiaPartitaBianco scacchi2023:partitaNepomniachtchiLirenWCC2023 .
+                            scacchi2023:strategiaPartitaBianco scacchi2023:partitaNepomniachtchiLirenWCC2023 ;
+                            rdfs:label "partitaItaliana"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaKasparovKarpov
 scacchi2023:partitaKasparovKarpov rdf:type owl:NamedIndividual ,
-                                           scacchi2023:PartitaAmichevole .
+                                           scacchi2023:PartitaAmichevole ;
+                                  rdfs:label "partitaKasparovKarpov"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaNepomniachtchiLirenWCC2023
@@ -675,14 +748,16 @@ scacchi2023:partitaNepomniachtchiLirenWCC2023 rdf:type owl:NamedIndividual ,
                                               scacchi2023:partitaDiTorneo scacchi2023:WorldChampionShip2023 ;
                                               scacchi2023:partitaGiocataDaGiocatore scacchi2023:DingLiren ,
                                                                                     scacchi2023:IanNepomniachtchi ;
-                                              scacchi2023:tempoPerGiocatore "10"^^xsd:nonNegativeInteger .
+                                              scacchi2023:tempoPerGiocatore "10"^^xsd:nonNegativeInteger ;
+                                              rdfs:label "partitaNepomniachtchiLirenWCC2023"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaTzabirGroenfeld
 scacchi2023:partitaTzabirGroenfeld rdf:type owl:NamedIndividual ,
                                             scacchi2023:PartitaUfficiale ;
                                    scacchi2023:partitaDiTorneo scacchi2023:ChessOlympiadsForPeopleWithDisabilities2023 ;
-                                   scacchi2023:tempoPerGiocatore "60"^^xsd:nonNegativeInteger .
+                                   scacchi2023:tempoPerGiocatore "60"^^xsd:nonNegativeInteger ;
+                                   rdfs:label "partitaTzabirGroenfeld"@it .
 
 
 #################################################################
