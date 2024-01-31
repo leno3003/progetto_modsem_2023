@@ -103,15 +103,15 @@ permette di avere una visione più chiara e ordinata di tali dati.
 Fra i task principali dell'ontologia troviamo quello
 \textbf{descrittivo}: rappresentare il dominio scacchistico in modo
 formale e coerente permette di avere una comprensione più chiara dei
-vari componenti che compongono tale dominio, e di come sono
+vari componenti che fanno parte tale dominio, e di come sono
 relazionati fra loro. Permette inoltre di fornire una base di
 comunicazione fra diversi sistemi che operano nel dominio degli
 scacchi: tale ontologia può infatti fornire un vocabolario comune con
-cui riferirsi a specifici concetti o individui. Un'ultima principale
+cui riferirsi a specifici concetti o individui. Un'ultima importante 
 motivazione per costruire tale ontologia sarebbe espandere ed
 integrare la 
 \href{https://www.bbc.co.uk/ontologies/sport-ontology/}{Sport Ontology} costruita da \textit{BBC}, per includere anche
-lo scacchi, quale sport olimpico.
+lo scacchi.
 
 
 \section{Utenti dell'ontologia}
@@ -121,10 +121,11 @@ studenti e appassionati di scacchi, che vogliono avere una visione
 complessiva e strutturata del dominio. Gli elementi riportati nell'ontologia,
 infatti, sono generalmente noti a chiunque abbia una conoscenza
 approfondita dell'ambiente. Ciononostante, l'ontologia può essere
-facilmente espansa per contenere elementi e classi più specifici,
-potendo dunque contenere informazioni molto specifiche riguardo
-elementi quali strategie giocate in determinate partite, o stili di
-gioco delle principali personaggi dell'ambito.
+facilmente espansa per contenere classi più specifiche,
+potendo dunque contenere informazioni avanzate riguardo
+elementi come: strategie giocate in determinate partite, o stili di
+gioco delle principali personaggi dell'ambito, rappresentando dunque
+un interesse per gli utenti più esperti.
 
 \chapter{Descrizione del dominio}
 
@@ -150,7 +151,8 @@ della tecnologia moderna.
 
 Un primo elemento che ha permesso di
 semplificare molto l'aspetto documentale
-delle partite giocate fisicamente, sono state le scacchiere moderne,
+delle partite giocate fisicamente, sono state le scacchiere
+automatiche,
 come quella in figura \ref{fig:scacchiera} che
 permettono la registrazione e la trasmissione delle mosse giocate,
 generando dunque un discreto quantitativo di dati che è necessario
@@ -171,17 +173,16 @@ serie televisiva Netflix del 2020, che ha avuto un impatto notevole nello
 Alcuni riferimenti importanti sono riportati nella seguente
 sitografia:
 \begin{itemize}
-  \item
-    https://digitalgametechnology.com/products/home-use-e-boards, è
+  \item \url{https://digitalgametechnology.com/products/home-use-e-boards}, è
     l'azienda produttrice delle scacchiere ufficiali per i tornei
     mondiali di scacchi, come quella sovrariportata.
-  \item https://www.chess.com/, è il sito più famoso per giocare
+  \item \url{https://www.chess.com/}, è il sito più famoso per giocare
     partite online, e contiene un'importante quantità di dati
     riguardanti le partite giocate. Ogni giocatore su questo sito deve
     dotarsi di un account, per cui è possibile interagire e osservare
     le partite che gli scacchisti professionisti giocano, oltre al
     poter sfidare i propri amici e cari.
-  \item https://www.fide.com/ è il sito ufficiale della Federazione
+  \item \url{https://www.fide.com/} è il sito ufficiale della Federazione
     Internazione degli Scacchi. Su tale risorsa è possibile trovare
     informazioni riguardo i vari giocatori, i tornei, le regole, e le
     news più recenti riguardanti il dominio.
@@ -295,7 +296,7 @@ affetto da handicap visivo, infatti, deve:
 \end{itemize}
 
 \begin{figure}[h]
-  \caption{Staunton Chess Set. Pezzi standad per i tornei, obbligatori
+  \caption{Staunton Chess Set. Pezzi standard per i tornei, obbligatori
   quando una partita si disputa con almeno un giocatore affetto da handicap visivi.}
   \centering
   \label{fig:pezzi_staunton}
@@ -647,7 +648,7 @@ I dati ottenuti da tale query sono mostrati in figura \ref{fig:query4}.
   \caption{Risultati della query 4.}
   \centering
   \label{fig:query4}
-  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_175016.png}
+  \includegraphics[scale=.65]{~/Pictures/Screenshots/Screenshot_20240104_175016.png}
 \end{figure} 
 
 \section{5 - Chi è la/lo scacchista con il punteggio Elo più alto?}
@@ -678,13 +679,13 @@ I dati ottenuti da tale query sono mostrati in figura \ref{fig:query5}.
   \caption{Risultati della query 5.}
   \centering
   \label{fig:query5}
-  \includegraphics[scale=1]{~/Pictures/Screenshots/Screenshot_20240104_175302.png}
+  \includegraphics[scale=.8]{~/Pictures/Screenshots/Screenshot_20240104_175302.png}
 \end{figure} 
 
 
 \chapter{Regole SWRL}
 
-Come estensione a scelta, ho scelto la scrittura ri regole $SWRL$, che
+Come estensione a scelta, ho scelto la scrittura di regole $SWRL$, che
 permettano di inferire informazioni ulteriori a quelle ottenibili dal
 reasoner presente in Protegè.
 Seguono le regole swirl con relativa giustificazione.
@@ -692,8 +693,8 @@ Seguono le regole swirl con relativa giustificazione.
 \section{Regola 1}
 
 Aggiungo alla sottoclasse $Scacchista$ una classe
-$ScacchistaVittoriosu$, in cui inserire tutte le istanze della classe
-scacchista che abbiano vinto almeno un torneo internazionale.
+$ScacchistaVittoriosu$ (niente typo, vedi disclaimer), in cui inserire tutte le istanze della classe
+scacchista che abbiano vinto almeno una partita.
 La regola è definita come segue:
 \begin{verbatim}
 
@@ -709,6 +710,8 @@ $ScacchistaProfessionista$, con il fine di identificare tutti le/gli
 scacchisti che abbiano vinto almeno un campionato del mondo, ovvero
 un torneo ufficiale internazionale appartenente alla classe
 $WorldChampionship$, sottoclasse di $TorneoInternazionale$.
+
+\newpage
 
 \begin{verbatim}
 

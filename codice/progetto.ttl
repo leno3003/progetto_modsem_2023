@@ -197,17 +197,26 @@ scacchi2023:tempoPerGiocatore rdf:type owl:DatatypeProperty ;
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#FM
 scacchi2023:FM rdf:type owl:Class ;
-               rdfs:subClassOf scacchi2023:ScacchistaProfessionista .
+               rdfs:subClassOf scacchi2023:ScacchistaProfessionista ;
+               rdfs:comment "Fide Master"@en ,
+                            "Maestro Fide."@it ;
+               rdfs:label "FM"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#GM
 scacchi2023:GM rdf:type owl:Class ;
-               rdfs:subClassOf scacchi2023:IM .
+               rdfs:subClassOf scacchi2023:IM ;
+               rdfs:comment "Gran Maestro"@it ,
+                            "Grand Master"@en ;
+               rdfs:label "GM"@en .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IM
 scacchi2023:IM rdf:type owl:Class ;
-               rdfs:subClassOf scacchi2023:FM .
+               rdfs:subClassOf scacchi2023:FM ;
+               rdfs:comment "International Master"@en ,
+                            "Maestro Internazionale"@it ;
+               rdfs:label "IM"@en .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PaesiOspitanti
@@ -236,17 +245,26 @@ scacchi2023:Partita rdf:type owl:Class ;
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevole
 scacchi2023:PartitaAmichevole rdf:type owl:Class ;
                               rdfs:subClassOf scacchi2023:Partita ;
-                              owl:disjointWith scacchi2023:PartitaUfficiale .
+                              owl:disjointWith scacchi2023:PartitaUfficiale ;
+                              rdfs:comment "Non competitive chess game, for training or fun purposes."@en ,
+                                           "Partita non competitiva, con scopi educativi o ludici."@it ;
+                              rdfs:label "Partita Amichevole" .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevoleLibera
 scacchi2023:PartitaAmichevoleLibera rdf:type owl:Class ;
-                                    rdfs:subClassOf scacchi2023:PartitaAmichevole .
+                                    rdfs:subClassOf scacchi2023:PartitaAmichevole ;
+                                    rdfs:comment "Friendly game that doesn't have time restrictions."@en ,
+                                                 "Partita Amichevole priva di restrizioni di tempo."@it ;
+                                    rdfs:label "Partita Amichevole Libera"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficiale
 scacchi2023:PartitaUfficiale rdf:type owl:Class ;
-                             rdfs:subClassOf scacchi2023:Partita .
+                             rdfs:subClassOf scacchi2023:Partita ;
+                             rdfs:comment "Official Game for which the result will be counted for global rankings purposes."@en ,
+                                          "Partita Ufficiale, il cui punteggio viene conteggiato ai fini della classifica globale."@it ;
+                             rdfs:label "Partita Ufficiale"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeBlitz
@@ -259,7 +277,10 @@ scacchi2023:PartitaUfficialeBlitz rdf:type owl:Class ;
                                                                            ) ;
                                                         rdf:type owl:Class
                                                       ] ;
-                                  rdfs:subClassOf scacchi2023:PartitaUfficiale .
+                                  rdfs:subClassOf scacchi2023:PartitaUfficiale ;
+                                  rdfs:comment "Blitz Official Game, characterized by the time limit of one minute for each player."@en ,
+                                               "Partita Ufficiale Blitz caratterizzata dal limite temporale di un minuto per ogni giocatore."@it ;
+                                  rdfs:label "Partita Ufficiale Blitz"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeGiocoRapido
@@ -272,7 +293,10 @@ scacchi2023:PartitaUfficialeGiocoRapido rdf:type owl:Class ;
                                                                                  ) ;
                                                               rdf:type owl:Class
                                                             ] ;
-                                        rdfs:subClassOf scacchi2023:PartitaUfficiale .
+                                        rdfs:subClassOf scacchi2023:PartitaUfficiale ;
+                                        rdfs:comment "Blitz Official Game, characterized by the time limit of 10 minutes for each player."@en ,
+                                                     "Partita Ufficiale caratterizzata dal limite temporale di 10 minuti a testa."@it ;
+                                        rdfs:label "Partita Ufficiale Gioco Rapido"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeStandard
@@ -285,46 +309,68 @@ scacchi2023:PartitaUfficialeStandard rdf:type owl:Class ;
                                                                               ) ;
                                                            rdf:type owl:Class
                                                          ] ;
-                                     rdfs:subClassOf scacchi2023:PartitaUfficiale .
+                                     rdfs:subClassOf scacchi2023:PartitaUfficiale ;
+                                     rdfs:comment "Blitz Official Game, characterized by the time limit of 60 minutes for each player."@en ,
+                                                  "Partita Ufficiale caratterizzata dal limite temporale di 60 minuti a testa."@it ;
+                                     rdfs:label "Partita Ufficiale Standard"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista
 scacchi2023:Scacchista rdf:type owl:Class ;
                        owl:equivalentClass <https://www.wikidata.org/wiki/Q10873124> ;
-                       owl:disjointWith scacchi2023:Torneo .
+                       owl:disjointWith scacchi2023:Torneo ;
+                       rdfs:label "Scacchista"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaAmatore
 scacchi2023:ScacchistaAmatore rdf:type owl:Class ;
                               rdfs:subClassOf scacchi2023:Scacchista ;
-                              owl:disjointWith scacchi2023:ScacchistaProfessionista .
+                              owl:disjointWith scacchi2023:ScacchistaProfessionista ;
+                              rdfs:comment "Giocatore non professionista"@en ,
+                                           "Non professional player"@en ;
+                              rdfs:label "Scacchista Amatore"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista
 scacchi2023:ScacchistaProfessionista rdf:type owl:Class ;
                                      rdfs:subClassOf scacchi2023:Scacchista ;
-                                     owl:disjointWith scacchi2023:Torneo .
+                                     owl:disjointWith scacchi2023:Torneo ;
+                                     rdfs:comment "Giocatore di professione."@it ,
+                                                  "Professional player."@en ;
+                                     rdfs:label "Scacchista Professionista."@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaVittoriosu
 scacchi2023:ScacchistaVittoriosu rdf:type owl:Class ;
-                                 rdfs:subClassOf scacchi2023:Scacchista .
+                                 rdfs:subClassOf scacchi2023:Scacchista ;
+                                 rdfs:comment "Professional player that won at least one match."@en ,
+                                              "Scacchista professionista che ha vinto almeno una partita"@it ;
+                                 rdfs:label "Scacchista Vittoriosu"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia
 scacchi2023:Strategia rdf:type owl:Class ;
-                      owl:disjointWith <https://www.bbc.co.uk/ontologies/sport/Match> .
+                      owl:disjointWith <https://www.bbc.co.uk/ontologies/sport/Match> ;
+                      rdfs:comment "Game strategy."@en ,
+                                   "Strategia di gioco."@it ;
+                      rdfs:label "Strategia"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaAggressiva
 scacchi2023:StrategiaAggressiva rdf:type owl:Class ;
                                 rdfs:subClassOf scacchi2023:Strategia ;
-                                owl:disjointWith scacchi2023:StrategiaDiPosizione .
+                                owl:disjointWith scacchi2023:StrategiaDiPosizione ;
+                                rdfs:comment "Game strategy that leads to multiple pieces taken."@en ,
+                                             "Strategia di gioco che porta a molti scambi di pezzi."@it ;
+                                rdfs:label "Strategia Aggressiva."@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaDiPosizione
 scacchi2023:StrategiaDiPosizione rdf:type owl:Class ;
-                                 rdfs:subClassOf scacchi2023:Strategia .
+                                 rdfs:subClassOf scacchi2023:Strategia ;
+                                 rdfs:comment "Less aggressive strategy, leads to less pieces taken."@en ,
+                                              "Strategia di gioco poco aggressiva, porta a meno scambi."@it ;
+                                 rdfs:label "Strategia di Posizione"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo
@@ -335,22 +381,34 @@ scacchi2023:Torneo rdf:type owl:Class ;
                                          owl:onClass scacchi2023:Partita
                                        ] ;
                    owl:disjointWith <https://www.wikidata.org/wiki/Q10873124> ,
-                                    <https://www.wikidata.org/wiki/Q6256> .
+                                    <https://www.wikidata.org/wiki/Q6256> ;
+                   rdfs:comment "Gruppi di partite strutturate."@it ,
+                                "Structured sequence of matches."@en ;
+                   rdfs:label "Torneo"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoInternazionale
 scacchi2023:TorneoInternazionale rdf:type owl:Class ;
-                                 rdfs:subClassOf scacchi2023:Torneo .
+                                 rdfs:subClassOf scacchi2023:Torneo ;
+                                 rdfs:comment "Chess tournament with players coming from all parts of the world."@en ,
+                                              "Torneo con giocatori provenienti da tutto il mondo."@it ;
+                                 rdfs:label "Torneo Internazionale"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoNazionale
 scacchi2023:TorneoNazionale rdf:type owl:Class ;
-                            rdfs:subClassOf scacchi2023:Torneo .
+                            rdfs:subClassOf scacchi2023:Torneo ;
+                            rdfs:comment "Torneo con persone provenienti dal medesimo paese."@it ,
+                                         "Tournment with people from the same country."@en ;
+                            rdfs:label "Torneo Nazionale"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampion
 scacchi2023:WorldChampion rdf:type owl:Class ;
-                          rdfs:subClassOf scacchi2023:ScacchistaProfessionista .
+                          rdfs:subClassOf scacchi2023:ScacchistaProfessionista ;
+                          rdfs:comment "Giocatore professionista che ha vinto un campionato del mondo"@en ,
+                                       "Professional Player that won at least one World championship"@en ;
+                          rdfs:label "World Champion"@en .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionship
@@ -361,16 +419,22 @@ scacchi2023:WorldChampionship rdf:type owl:Class ;
 ###  https://www.bbc.co.uk/ontologies/sport/Match
 <https://www.bbc.co.uk/ontologies/sport/Match> rdf:type owl:Class ;
                                                owl:disjointWith <https://www.wikidata.org/wiki/Q10873124> ;
+                                               rdfs:comment "Singola partita di scacchi."@it ,
+                                                            "Single chess game" ;
                                                rdfs:label "Match" .
 
 
 ###  https://www.wikidata.org/wiki/Q10873124
 <https://www.wikidata.org/wiki/Q10873124> rdf:type owl:Class ;
+                                          rdfs:comment "Individual that plays chess."@en ,
+                                                       "Individuo che gioca a scacchi."@it ;
                                           rdfs:label "ChessPlayer" .
 
 
 ###  https://www.wikidata.org/wiki/Q6256
 <https://www.wikidata.org/wiki/Q6256> rdf:type owl:Class ;
+                                      rdfs:comment "Country that hosted chess games or tournments."@en ,
+                                                   "Paese che ha ospitato tornei o partite di scacchi"@it ;
                                       rdfs:label "Country" .
 
 
