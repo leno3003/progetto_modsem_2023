@@ -58,9 +58,7 @@
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatorePartecipaTorneo
-<http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatorePartecipaTorneo> rdf:type owl:ObjectProperty ,
-                                                                                                   owl:AsymmetricProperty ,
-                                                                                                   owl:IrreflexiveProperty ;
+<http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatorePartecipaTorneo> rdf:type owl:ObjectProperty ;
                                                                                           rdfs:domain <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista> ;
                                                                                           rdfs:range <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo> ;
                                                                                           owl:propertyChainAxiom ( <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita>
@@ -144,12 +142,6 @@
                                                                                  rdfs:range <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo> ;
                                                                                  rdfs:comment "Giocatore vincitore di un determinato torneo."@it ;
                                                                                  rdfs:label "vincitoreTorneo"@it .
-
-
-###  http://www.w3.org/2002/07/owl#topObjectProperty
-owl:topObjectProperty rdf:type owl:SymmetricProperty ,
-                               owl:TransitiveProperty ,
-                               owl:ReflexiveProperty .
 
 
 #################################################################
@@ -487,6 +479,7 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ChessOlympiadsForPeopleWithDisabilities2023> rdf:type owl:NamedIndividual ,
                                                                                                                       <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo> ,
                                                                                                                       <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoInternazionale> ;
+                                                                                                             <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#torneoContienePartita> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaTzabirGroenfeld> ;
                                                                                                              rdfs:comment "Torneo professionistico per individui affetti da disabilità"@it ;
                                                                                                              rdfs:label "ChessOlympiadsForPeopleWithDisabilities2023"@it .
 
@@ -508,6 +501,8 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
                                                                                     <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaVittoriosu> ,
                                                                                     <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampion> ,
                                                                                     <https://www.wikidata.org/wiki/Q10873124> ;
+                                                                           <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaNepomniachtchiLirenWCC2023> ;
+                                                                           <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatorePartecipaTorneo> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023> ;
                                                                            <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitorePartita> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaNepomniachtchiLirenWCC2023> ;
                                                                            <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitoreTorneo> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023> ;
                                                                            <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#nomeCompleto> "Ding Liren" ;
@@ -523,7 +518,8 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
                                                                                        <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista> ,
                                                                                        <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista> ,
                                                                                        <https://www.wikidata.org/wiki/Q10873124> ;
-                                                                              <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#haPunteggioSuperioreDi> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HikaruNakamura> ;
+                                                                              <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#haPunteggioSuperioreDi> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HikaruNakamura> ,
+                                                                                                                                                                      <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IanNepomniachtchi> ;
                                                                               <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#nomeCompleto> "Fabio Caruana" ;
                                                                               <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#punteggioElo> 2794 ;
                                                                               rdfs:comment "Scacchista Professionista"@it ;
@@ -573,6 +569,8 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
                                                                                             <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista> ,
                                                                                             <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista> ,
                                                                                             <https://www.wikidata.org/wiki/Q10873124> ;
+                                                                                   <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaNepomniachtchiLirenWCC2023> ;
+                                                                                   <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatorePartecipaTorneo> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionShip2023> ;
                                                                                    rdfs:comment "Scacchista Professionista"@it ;
                                                                                    rdfs:label "IanNepomniachtchi"@it .
 
@@ -672,6 +670,7 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
                                                                                        <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista> ,
                                                                                        <https://www.wikidata.org/wiki/Q10873124> ;
                                                                               <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaTzabirGroenfeld> ;
+                                                                              <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatorePartecipaTorneo> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ChessOlympiadsForPeopleWithDisabilities2023> ;
                                                                               <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#punteggioElo> 2425 ;
                                                                               rdfs:comment "Scacchista Professionista"@it ;
                                                                               rdfs:label "MarcinTazbir"@it .
@@ -761,6 +760,7 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
                                                                                                 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Torneo> ,
                                                                                                 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#TorneoInternazionale> ,
                                                                                                 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#WorldChampionship> ;
+                                                                                       <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#torneoContienePartita> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaNepomniachtchiLirenWCC2023> ;
                                                                                        <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#annoTorneo> 2023 ;
                                                                                        rdfs:comment "Torneo professionistico"@it ;
                                                                                        rdfs:label "WorldChampionShip2023"@it .
@@ -797,6 +797,7 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
                                                                                           <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaVittoriosu> ,
                                                                                           <https://www.wikidata.org/wiki/Q10873124> ;
                                                                                  <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaTzabirGroenfeld> ;
+                                                                                 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatorePartecipaTorneo> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ChessOlympiadsForPeopleWithDisabilities2023> ;
                                                                                  <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitorePartita> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaTzabirGroenfeld> ;
                                                                                  <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vincitoreTorneo> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ChessOlympiadsForPeopleWithDisabilities2023> ;
                                                                                  <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#nomeCompleto> "Yehuda Groenfeld" ;
@@ -859,6 +860,8 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
                                                                                                 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita> ,
                                                                                                 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaAmichevole> ,
                                                                                                 <https://www.bbc.co.uk/ontologies/sport/Match> ;
+                                                                                       <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaGiocataDaGiocatore> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Karpov> ,
+                                                                                                                                                                                  <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Kasparov> ;
                                                                                        rdfs:comment "Partita amichevole disputata fra Kasparov e Karpov"@it ;
                                                                                        rdfs:label "partitaKasparovKarpov"@it .
 
@@ -884,6 +887,8 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
                                                                                                  <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#PartitaUfficialeStandard> ,
                                                                                                  <https://www.bbc.co.uk/ontologies/sport/Match> ;
                                                                                         <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaDiTorneo> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ChessOlympiadsForPeopleWithDisabilities2023> ;
+                                                                                        <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaGiocataDaGiocatore> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#MarcinTazbir> ,
+                                                                                                                                                                                   <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#YehudaGroenfeld> ;
                                                                                         <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#tempoPerGiocatore> "60"^^xsd:nonNegativeInteger ;
                                                                                         rdfs:comment "Finale del torneo Chess Olympiads for people with Disabilities."@it ;
                                                                                         rdfs:label "partitaTzabirGroenfeld"@it .
