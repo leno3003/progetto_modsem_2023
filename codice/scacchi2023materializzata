@@ -1,20 +1,20 @@
-@prefix : <http://www.semanticweb.org/leno/ontologies/2024/1/untitled-ontology-50#> .
+@prefix : <http://www.semanticweb.org/leno/ontologies/2024/1/scacchi2023materializzata#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/leno/ontologies/2024/1/untitled-ontology-50> .
+@base <http://www.semanticweb.org/leno/ontologies/2024/1/scacchi2023materializzata> .
 
-<http://www.semanticweb.org/leno/ontologies/2024/1/untitled-ontology-50> rdf:type owl:Ontology ;
-                                                                          <http://purl.org/dc/elements/1.1/date> "2023-12-27" ;
-                                                                          <http://purl.org/dc/elements/1.1/description> "Enrico Cassano"@it ,
-                                                                                                                        "Ontologia costruita per scopi didattici e divulgativi, riguardante i principali eventi e personalità dell'ambito scacchistico professionale."@it ,
-                                                                                                                        "This ontology was built for educational and divulgative purposes. It contains the main events and characters of the professional chess scene."@en ;
-                                                                          <http://purl.org/dc/elements/1.1/title> "Chess Ontology - 2023"@en ;
-                                                                          <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:preferredNamespacePrefix> "CO" ;
-                                                                          <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:preferredNamespaceURI> "http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023" ;
-                                                                          rdfs:label "ChessOntology" .
+<http://www.semanticweb.org/leno/ontologies/2024/1/scacchi2023materializzata> rdf:type owl:Ontology ;
+                                                                               <http://purl.org/dc/elements/1.1/date> "2023-12-27" ;
+                                                                               <http://purl.org/dc/elements/1.1/description> "Enrico Cassano"@it ,
+                                                                                                                             "Ontologia costruita per scopi didattici e divulgativi, riguardante i principali eventi e personalità dell'ambito scacchistico professionale."@it ,
+                                                                                                                             "This ontology was built for educational and divulgative purposes. It contains the main events and characters of the professional chess scene."@en ;
+                                                                               <http://purl.org/dc/elements/1.1/title> "Chess Ontology - 2023"@en ;
+                                                                               <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:preferredNamespacePrefix> "CO" ;
+                                                                               <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#vann:preferredNamespaceURI> "http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023" ;
+                                                                               rdfs:label "ChessOntology" .
 
 #################################################################
 #    Annotation properties
@@ -48,22 +48,6 @@
 #    Object Properties
 #################################################################
 
-###  http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf
-<http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf> rdf:type owl:ObjectProperty ,
-                                                                            owl:TransitiveProperty ;
-                                                                   rdfs:domain owl:Thing ;
-                                                                   rdfs:range owl:Thing .
-
-
-###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#elementoDi
-<http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#elementoDi> rdf:type owl:ObjectProperty ;
-                                                                            rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf> ;
-                                                                            rdfs:domain <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia> ;
-                                                                            rdfs:range <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Partita> ;
-                                                                            rdfs:comment "Collegamento fra strategia e partita. Legame transitivo per permettere di capire quali strategie sono state giocate in un certo torneo."@it ;
-                                                                            rdfs:label "elementoDi"@it .
-
-
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita
 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita> rdf:type owl:ObjectProperty ;
                                                                                        owl:inverseOf <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaGiocataDaGiocatore> ;
@@ -84,6 +68,13 @@
                                                                                                                  ) ;
                                                                                           rdfs:comment "Property chain fra giocatore e torneo tramite la partita giocata, appartenente ad un certo torneo."@it ;
                                                                                           rdfs:label "giocatorePartecipaTorneo"@it .
+
+
+###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#haPunteggioSuperioreDi
+<http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#haPunteggioSuperioreDi> rdf:type owl:ObjectProperty ,
+                                                                                                 owl:TransitiveProperty ;
+                                                                                        rdfs:domain <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista> ;
+                                                                                        rdfs:range <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista> .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#paeseOspitaTorneo
@@ -392,10 +383,7 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaAggressiva
 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaAggressiva> rdf:type owl:Class ;
                                                                                      rdfs:subClassOf <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia> ;
-                                                                                     owl:disjointWith <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaDiPosizione> ;
-                                                                                     rdfs:comment "Game strategy that leads to multiple pieces taken."@en ,
-                                                                                                  "Strategia di gioco che porta a molti scambi di pezzi."@it ;
-                                                                                     rdfs:label "Strategia Aggressiva."@it .
+                                                                                     owl:disjointWith <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaDiPosizione> .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaDiPosizione
@@ -535,6 +523,7 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
                                                                                        <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista> ,
                                                                                        <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista> ,
                                                                                        <https://www.wikidata.org/wiki/Q10873124> ;
+                                                                              <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#haPunteggioSuperioreDi> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HikaruNakamura> ;
                                                                               <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#nomeCompleto> "Fabio Caruana" ;
                                                                               <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#punteggioElo> 2794 ;
                                                                               rdfs:comment "Scacchista Professionista"@it ;
@@ -556,6 +545,7 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
                                                                                          <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista> ,
                                                                                          <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#ScacchistaProfessionista> ,
                                                                                          <https://www.wikidata.org/wiki/Q10873124> ;
+                                                                                <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#haPunteggioSuperioreDi> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#IanNepomniachtchi> ;
                                                                                 rdfs:comment "Scacchista professionista"@it ;
                                                                                 rdfs:label "HikaruNakamura"@it .
 
@@ -833,8 +823,7 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaSiciliana
 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaSiciliana> rdf:type owl:NamedIndividual ,
-                                                                                          <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia> ,
-                                                                                          <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaAggressiva> ;
+                                                                                          <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia> ;
                                                                                  <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#strategiaPartitaNero> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaNepomniachtchiLirenWCC2023> ;
                                                                                  rdfs:comment "Strategia di gioco per il nero"@it ;
                                                                                  rdfs:label "difesaSiciliana"@it .
@@ -858,7 +847,8 @@ owl:topObjectProperty rdf:type owl:SymmetricProperty ,
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaItaliana
 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaItaliana> rdf:type owl:NamedIndividual ,
-                                                                                          <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia> ;
+                                                                                          <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia> ,
+                                                                                          <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaAggressiva> ;
                                                                                  <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#strategiaPartitaBianco> <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaNepomniachtchiLirenWCC2023> ;
                                                                                  rdfs:comment "Strategia di gioco per il bianco"@it ;
                                                                                  rdfs:label "partitaItaliana"@it .

@@ -63,22 +63,6 @@ rdfs:label rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf
-<http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf> rdf:type owl:ObjectProperty ,
-                                                                            owl:TransitiveProperty ;
-                                                                   rdfs:domain owl:Thing ;
-                                                                   rdfs:range owl:Thing .
-
-
-###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#elementoDi
-scacchi2023:elementoDi rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#isPartOf> ;
-                       rdfs:domain scacchi2023:Strategia ;
-                       rdfs:range scacchi2023:Partita ;
-                       rdfs:comment "Collegamento fra strategia e partita. Legame transitivo per permettere di capire quali strategie sono state giocate in un certo torneo."@it ;
-                       rdfs:label "elementoDi"@it .
-
-
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#giocatoreGiocaPartita
 scacchi2023:giocatoreGiocaPartita rdf:type owl:ObjectProperty ;
                                   owl:inverseOf scacchi2023:partitaGiocataDaGiocatore ;
@@ -97,6 +81,13 @@ scacchi2023:giocatorePartecipaTorneo rdf:type owl:ObjectProperty ;
                                                             ) ;
                                      rdfs:comment "Property chain fra giocatore e torneo tramite la partita giocata, appartenente ad un certo torneo."@it ;
                                      rdfs:label "giocatorePartecipaTorneo"@it .
+
+
+###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#haPunteggioSuperioreDi
+scacchi2023:haPunteggioSuperioreDi rdf:type owl:ObjectProperty ,
+                                            owl:TransitiveProperty ;
+                                   rdfs:domain scacchi2023:ScacchistaProfessionista ;
+                                   rdfs:range scacchi2023:ScacchistaProfessionista .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#paeseOspitaTorneo
@@ -394,10 +385,7 @@ scacchi2023:Strategia rdf:type owl:Class ;
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaAggressiva
 scacchi2023:StrategiaAggressiva rdf:type owl:Class ;
                                 rdfs:subClassOf scacchi2023:Strategia ;
-                                owl:disjointWith scacchi2023:StrategiaDiPosizione ;
-                                rdfs:comment "Game strategy that leads to multiple pieces taken."@en ,
-                                             "Strategia di gioco che porta a molti scambi di pezzi."@it ;
-                                rdfs:label "Strategia Aggressiva."@it .
+                                owl:disjointWith scacchi2023:StrategiaDiPosizione .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#StrategiaDiPosizione
@@ -518,6 +506,7 @@ scacchi2023:DingLiren rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#FabioCaruana
 scacchi2023:FabioCaruana rdf:type owl:NamedIndividual ,
                                   scacchi2023:ScacchistaProfessionista ;
+                         scacchi2023:haPunteggioSuperioreDi scacchi2023:HikaruNakamura ;
                          scacchi2023:nomeCompleto "Fabio Caruana" ;
                          scacchi2023:punteggioElo 2794 ;
                          rdfs:comment "Scacchista Professionista"@it ;
@@ -534,6 +523,7 @@ scacchi2023:Germania rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#HikaruNakamura
 scacchi2023:HikaruNakamura rdf:type owl:NamedIndividual ,
                                     scacchi2023:ScacchistaProfessionista ;
+                           scacchi2023:haPunteggioSuperioreDi scacchi2023:IanNepomniachtchi ;
                            rdfs:comment "Scacchista professionista"@it ;
                            rdfs:label "HikaruNakamura"@it .
 
@@ -747,8 +737,7 @@ scacchi2023:difesaCaroKhan rdf:type owl:NamedIndividual ,
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaSiciliana
-scacchi2023:difesaSiciliana rdf:type owl:NamedIndividual ,
-                                     scacchi2023:StrategiaAggressiva ;
+scacchi2023:difesaSiciliana rdf:type owl:NamedIndividual ;
                             scacchi2023:strategiaPartitaNero scacchi2023:partitaNepomniachtchiLirenWCC2023 ;
                             rdfs:comment "Strategia di gioco per il nero"@it ;
                             rdfs:label "difesaSiciliana"@it .
@@ -770,7 +759,8 @@ scacchi2023:gambettoDiDonna rdf:type owl:NamedIndividual ,
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaItaliana
 scacchi2023:partitaItaliana rdf:type owl:NamedIndividual ,
-                                     scacchi2023:Strategia ;
+                                     scacchi2023:Strategia ,
+                                     scacchi2023:StrategiaAggressiva ;
                             scacchi2023:strategiaPartitaBianco scacchi2023:partitaNepomniachtchiLirenWCC2023 ;
                             rdfs:comment "Strategia di gioco per il bianco"@it ;
                             rdfs:label "partitaItaliana"@it .
