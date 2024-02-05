@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  31 JAN 2024 15:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  5 FEB 2024 15:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -632,7 +632,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 402--403
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 402--403
-\OT1/cmtt/m/n/12 2Fmain % 2Fcodice % 2Fprogetto . rdf & owlapi = true & imported = true &
+\OT1/cmtt/m/n/12 2Fmain % 2Fcodice % 2Fprogetto . ttl & owlapi = true & imported = true &
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
+[][]$\OT1/cmtt/m/n/12 http : / / 150 . 146 . 207 . 114 / lode / extract ? url = https % 3A % 2F % 2Fraw .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
+\OT1/cmtt/m/n/12 githubusercontent . com % 2Fleno3003 % 2Fprogetto _ modsem _ 2023 %
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
+\OT1/cmtt/m/n/12 2Fmain % 2Fcodice % 2Fscacchi2023materializzata & owlapi = true &
  []
 
 [25
@@ -641,24 +656,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 402--403
 
 ]
 Capitolo 8.
-<~/Pictures/Screenshots/Screenshot_20240123_165004.png, id=308, 298.11375pt x 557.08125pt>
+<~/Pictures/Screenshots/Screenshot_20240123_165004.png, id=312, 298.11375pt x 557.08125pt>
 File: ~/Pictures/Screenshots/Screenshot_20240123_165004.png Graphic file (type png)
 <use ~/Pictures/Screenshots/Screenshot_20240123_165004.png>
-Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240123_165004.png  used on input line 416.
+Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240123_165004.png  used on input line 423.
 (pdftex.def)             Requested size: 238.49132pt x 445.6656pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<~/Pictures/Screenshots/Screenshot_20240124_183858.png, id=311, 323.70938pt x 311.66437pt>
+<~/Pictures/Screenshots/Screenshot_20240124_183858.png, id=315, 323.70938pt x 311.66437pt>
 File: ~/Pictures/Screenshots/Screenshot_20240124_183858.png Graphic file (type png)
 <use ~/Pictures/Screenshots/Screenshot_20240124_183858.png>
-Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240124_183858.png  used on input line 434.
+Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240124_183858.png  used on input line 441.
 (pdftex.def)             Requested size: 323.70859pt x 311.6636pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (52.33618pt too wide) in paragraph at lines 444--461
+Overfull \hbox (52.33618pt too wide) in paragraph at lines 451--468
  [] 
  []
 
@@ -669,13 +684,13 @@ Capitolo 9.
 
 
 pdfTeX warning: pdflatex (file /home/leno/studio/uni/corsi_22_23/modsem/progetto/relazione/FlussoMODSEM2023.drawio.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<~/studio/uni/corsi_22_23/modsem/progetto/relazione/FlussoMODSEM2023.drawio.pdf, id=335, 575.2692pt x 408.56638pt>
+<~/studio/uni/corsi_22_23/modsem/progetto/relazione/FlussoMODSEM2023.drawio.pdf, id=339, 575.2692pt x 408.56638pt>
 File: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/FlussoMODSEM2023.drawio.pdf Graphic file (type pdf)
 <use ~/studio/uni/corsi_22_23/modsem/progetto/relazione/FlussoMODSEM2023.drawio.pdf>
-Package pdftex.def Info: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/FlussoMODSEM2023.drawio.pdf  used on input line 488.
+Package pdftex.def Info: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/FlussoMODSEM2023.drawio.pdf  used on input line 495.
 (pdftex.def)             Requested size: 460.21599pt x 326.85353pt.
 
-Overfull \hbox (70.21599pt too wide) in paragraph at lines 488--489
+Overfull \hbox (70.21599pt too wide) in paragraph at lines 495--496
  [][] 
  []
 
@@ -685,10 +700,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 pdfTeX warning: pdflatex (file /home/leno/studio/uni/corsi_22_23/modsem/progetto/relazione/landingpage.drawio.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<~/studio/uni/corsi_22_23/modsem/progetto/relazione/landingpage.drawio.pdf, id=336, 378.45387pt x 250.0542pt>
+<~/studio/uni/corsi_22_23/modsem/progetto/relazione/landingpage.drawio.pdf, id=340, 378.45387pt x 250.0542pt>
 File: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/landingpage.drawio.pdf Graphic file (type pdf)
 <use ~/studio/uni/corsi_22_23/modsem/progetto/relazione/landingpage.drawio.pdf>
-Package pdftex.def Info: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/landingpage.drawio.pdf  used on input line 495.
+Package pdftex.def Info: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/landingpage.drawio.pdf  used on input line 502.
 (pdftex.def)             Requested size: 378.45294pt x 250.05357pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -696,10 +711,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 pdfTeX warning: pdflatex (file /home/leno/studio/uni/corsi_22_23/modsem/progetto/relazione/scacchisti.drawio.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<~/studio/uni/corsi_22_23/modsem/progetto/relazione/scacchisti.drawio.pdf, id=337, 378.45387pt x 250.0542pt>
+<~/studio/uni/corsi_22_23/modsem/progetto/relazione/scacchisti.drawio.pdf, id=341, 378.45387pt x 250.0542pt>
 File: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/scacchisti.drawio.pdf Graphic file (type pdf)
 <use ~/studio/uni/corsi_22_23/modsem/progetto/relazione/scacchisti.drawio.pdf>
-Package pdftex.def Info: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/scacchisti.drawio.pdf  used on input line 502.
+Package pdftex.def Info: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/scacchisti.drawio.pdf  used on input line 509.
 (pdftex.def)             Requested size: 378.45294pt x 250.05357pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -707,10 +722,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 pdfTeX warning: pdflatex (file /home/leno/studio/uni/corsi_22_23/modsem/progetto/relazione/strategie.drawio.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<~/studio/uni/corsi_22_23/modsem/progetto/relazione/strategie.drawio.pdf, id=338, 378.45387pt x 250.0542pt>
+<~/studio/uni/corsi_22_23/modsem/progetto/relazione/strategie.drawio.pdf, id=342, 378.45387pt x 250.0542pt>
 File: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/strategie.drawio.pdf Graphic file (type pdf)
 <use ~/studio/uni/corsi_22_23/modsem/progetto/relazione/strategie.drawio.pdf>
-Package pdftex.def Info: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/strategie.drawio.pdf  used on input line 509.
+Package pdftex.def Info: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/strategie.drawio.pdf  used on input line 516.
 (pdftex.def)             Requested size: 378.45294pt x 250.05357pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -718,10 +733,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 pdfTeX warning: pdflatex (file /home/leno/studio/uni/corsi_22_23/modsem/progetto/relazione/tornei.drawio.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<~/studio/uni/corsi_22_23/modsem/progetto/relazione/tornei.drawio.pdf, id=339, 378.45387pt x 250.0542pt>
+<~/studio/uni/corsi_22_23/modsem/progetto/relazione/tornei.drawio.pdf, id=343, 378.45387pt x 250.0542pt>
 File: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/tornei.drawio.pdf Graphic file (type pdf)
 <use ~/studio/uni/corsi_22_23/modsem/progetto/relazione/tornei.drawio.pdf>
-Package pdftex.def Info: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/tornei.drawio.pdf  used on input line 517.
+Package pdftex.def Info: ~/studio/uni/corsi_22_23/modsem/progetto/relazione/tornei.drawio.pdf  used on input line 524.
 (pdftex.def)             Requested size: 378.45294pt x 250.05357pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -729,22 +744,22 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [31] [32 </home/leno/studio/uni/corsi_22_23/modsem/progetto/relazione/FlussoMODSEM2023.drawio.pdf>] [33 </home/leno/studio/uni/corsi_22_23/modsem/progetto/relazione/landingpage.drawio.pdf>] [34 </home/leno/studio/uni/corsi_22_23/modsem/progetto/relazione/scacchisti.drawio.pdf>] [35 </home/leno/studio/uni/corsi_22_23/modsem/progetto/relazione/strategie.drawio.pdf>] [36 </home/leno/studio/uni/corsi_22_23/modsem/progetto/relazione/tornei.drawio.pdf>]
 Capitolo 10.
 
-Overfull \hbox (2.2138pt too wide) in paragraph at lines 523--523
+Overfull \hbox (2.2138pt too wide) in paragraph at lines 530--530
 []\OT1/cmr/bx/n/17.28 1 - Qua-li so-no le prin-ci-pa-li stra-te-gie scac-
  []
 
 
-Overfull \hbox (110.17525pt too wide) in paragraph at lines 529--529
+Overfull \hbox (110.17525pt too wide) in paragraph at lines 536--536
 []\OT1/cmtt/m/n/12 PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>[] 
  []
 
-<~/Pictures/Screenshots/Screenshot_20240104_174014.png, id=444, 395.22656pt x 115.93312pt>
+<~/Pictures/Screenshots/Screenshot_20240104_174014.png, id=448, 395.22656pt x 115.93312pt>
 File: ~/Pictures/Screenshots/Screenshot_20240104_174014.png Graphic file (type png)
 <use ~/Pictures/Screenshots/Screenshot_20240104_174014.png>
-Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240104_174014.png  used on input line 551.
+Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240104_174014.png  used on input line 558.
 (pdftex.def)             Requested size: 395.22559pt x 115.93283pt.
 
-Overfull \hbox (5.22559pt too wide) in paragraph at lines 551--552
+Overfull \hbox (5.22559pt too wide) in paragraph at lines 558--559
  [][] 
  []
 
@@ -757,17 +772,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [37
 
 ]
-Overfull \hbox (110.17525pt too wide) in paragraph at lines 560--560
+Overfull \hbox (110.17525pt too wide) in paragraph at lines 567--567
 []\OT1/cmtt/m/n/12 PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>[] 
  []
 
-<~/Pictures/Screenshots/Screenshot_20240104_174230.png, id=453, 412.54124pt x 85.06781pt>
+<~/Pictures/Screenshots/Screenshot_20240104_174230.png, id=457, 412.54124pt x 85.06781pt>
 File: ~/Pictures/Screenshots/Screenshot_20240104_174230.png Graphic file (type png)
 <use ~/Pictures/Screenshots/Screenshot_20240104_174230.png>
-Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240104_174230.png  used on input line 583.
+Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240104_174230.png  used on input line 590.
 (pdftex.def)             Requested size: 412.54024pt x 85.0676pt.
 
-Overfull \hbox (22.54024pt too wide) in paragraph at lines 583--584
+Overfull \hbox (22.54024pt too wide) in paragraph at lines 590--591
  [][] 
  []
 
@@ -778,22 +793,22 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [38 </home/leno/Pictures/Screenshots/Screenshot_20240104_174014.png (PNG copy)>]
-Overfull \hbox (110.17525pt too wide) in paragraph at lines 593--593
+Overfull \hbox (110.17525pt too wide) in paragraph at lines 600--600
 []\OT1/cmtt/m/n/12 PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>[] 
  []
 
 
-Overfull \hbox (110.17525pt too wide) in paragraph at lines 597--597
+Overfull \hbox (110.17525pt too wide) in paragraph at lines 604--604
 []  \OT1/cmtt/m/n/12 ?x scacchi:vincitoreTorneo scacchi:ChessOlympiadsForPeopleWithDisabilities2023.[] 
  []
 
-<~/Pictures/Screenshots/Screenshot_20240104_174642.png, id=460, 406.51875pt x 100.12407pt>
+<~/Pictures/Screenshots/Screenshot_20240104_174642.png, id=464, 406.51875pt x 100.12407pt>
 File: ~/Pictures/Screenshots/Screenshot_20240104_174642.png Graphic file (type png)
 <use ~/Pictures/Screenshots/Screenshot_20240104_174642.png>
-Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240104_174642.png  used on input line 616.
+Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240104_174642.png  used on input line 623.
 (pdftex.def)             Requested size: 406.51775pt x 100.12381pt.
 
-Overfull \hbox (16.51775pt too wide) in paragraph at lines 616--617
+Overfull \hbox (16.51775pt too wide) in paragraph at lines 623--624
  [][] 
  []
 
@@ -806,37 +821,37 @@ Overfull \hbox (275.06062pt too wide) has occurred while \output is active
  []
 
 [39 </home/leno/Pictures/Screenshots/Screenshot_20240104_174230.png (PNG copy)>]
-Overfull \hbox (110.17525pt too wide) in paragraph at lines 625--625
+Overfull \hbox (110.17525pt too wide) in paragraph at lines 632--632
 []\OT1/cmtt/m/n/12 PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>[] 
  []
 
 
-Overfull \hbox (48.42522pt too wide) in paragraph at lines 630--630
+Overfull \hbox (48.42522pt too wide) in paragraph at lines 637--637
 []    \OT1/cmtt/m/n/12 scacchi:difesaSiciliana scacchi:strategiaPartitaNero ?partitevinte.[] 
  []
 
-<~/Pictures/Screenshots/Screenshot_20240104_175016.png, id=467, 730.22812pt x 85.82062pt>
+<~/Pictures/Screenshots/Screenshot_20240104_175016.png, id=471, 730.22812pt x 85.82062pt>
 File: ~/Pictures/Screenshots/Screenshot_20240104_175016.png Graphic file (type png)
 <use ~/Pictures/Screenshots/Screenshot_20240104_175016.png>
-Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240104_175016.png  used on input line 651.
+Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240104_175016.png  used on input line 658.
 (pdftex.def)             Requested size: 474.64265pt x 55.78271pt.
 
-Overfull \hbox (84.64265pt too wide) in paragraph at lines 651--652
+Overfull \hbox (84.64265pt too wide) in paragraph at lines 658--659
  [][] 
  []
 
 [40 </home/leno/Pictures/Screenshots/Screenshot_20240104_174642.png (PNG copy)> </home/leno/Pictures/Screenshots/Screenshot_20240104_175016.png (PNG copy)>]
-Overfull \hbox (110.17525pt too wide) in paragraph at lines 660--660
+Overfull \hbox (110.17525pt too wide) in paragraph at lines 667--667
 []\OT1/cmtt/m/n/12 PREFIX scacchi: <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#>[] 
  []
 
-<~/Pictures/Screenshots/Screenshot_20240104_175302.png, id=474, 647.41875pt x 139.27031pt>
+<~/Pictures/Screenshots/Screenshot_20240104_175302.png, id=478, 647.41875pt x 139.27031pt>
 File: ~/Pictures/Screenshots/Screenshot_20240104_175302.png Graphic file (type png)
 <use ~/Pictures/Screenshots/Screenshot_20240104_175302.png>
-Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240104_175302.png  used on input line 682.
+Package pdftex.def Info: ~/Pictures/Screenshots/Screenshot_20240104_175302.png  used on input line 689.
 (pdftex.def)             Requested size: 517.9357pt x 111.41638pt.
 
-Overfull \hbox (127.9357pt too wide) in paragraph at lines 682--683
+Overfull \hbox (127.9357pt too wide) in paragraph at lines 689--690
  [][] 
  []
 
@@ -850,22 +865,22 @@ Overfull \hbox (31.97388pt too wide) has occurred while \output is active
 ]
 Capitolo 11.
 
-Overfull \hbox (11.3752pt too wide) in paragraph at lines 701--701
+Overfull \hbox (11.3752pt too wide) in paragraph at lines 708--708
 []\OT1/cmtt/m/n/12 scacchi2023:Scacchista(?x) ^ scacchi2023:vincitorePartita(?x, ?y)[] 
  []
 
 
-Overfull \hbox (48.2817pt too wide) in paragraph at lines 708--713
+Overfull \hbox (48.2817pt too wide) in paragraph at lines 715--720
 []\OT1/cmr/m/n/12 E sta-ta ag-giun-ta la sot-to-clas-se $\OML/cmm/m/it/12 WorldChampion$ \OT1/cmr/m/n/12 al-la clas-se $\OML/cmm/m/it/12 ScacchistaProfessionista$\OT1/cmr/m/n/12 ,
  []
 
 [43]
-Overfull \hbox (79.30023pt too wide) in paragraph at lines 718--718
+Overfull \hbox (79.30023pt too wide) in paragraph at lines 725--725
 []\OT1/cmtt/m/n/12 scacchi2023:ScacchistaProfessionista(?x) ^ scacchi2023:WorldChampionship(?t)[] 
  []
 
 
-Overfull \hbox (42.25021pt too wide) in paragraph at lines 719--719
+Overfull \hbox (42.25021pt too wide) in paragraph at lines 726--726
 []\OT1/cmtt/m/n/12 ^ scacchi2023:vincitoreTorneo(?x, ?t) -> scacchi2023:WorldChampion(?x)[] 
  []
 
@@ -874,18 +889,18 @@ Package rerunfilecheck Info: File `relazione.out' has not changed.
 (rerunfilecheck)             Checksum: D69080D850FC3BF0C7FE72D1A3015262;4902.
  ) 
 Here is how much of TeX's memory you used:
- 20270 strings out of 480163
- 382039 string characters out of 5894093
+ 20271 strings out of 480163
+ 382054 string characters out of 5894093
  656831 words of memory out of 5000000
- 37779 multiletter control sequences out of 15000+600000
+ 37780 multiletter control sequences out of 15000+600000
  480262 words of font info for 69 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  99i,7n,104p,604b,497s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on relazione.pdf (45 pages, 1268938 bytes).
+Output written on relazione.pdf (45 pages, 1269490 bytes).
 PDF statistics:
- 568 PDF objects out of 1000 (max. 8388607)
- 458 compressed objects within 5 object streams
+ 572 PDF objects out of 1000 (max. 8388607)
+ 462 compressed objects within 5 object streams
  99 named destinations out of 1000 (max. 500000)
  329 words of extra memory for PDF output out of 10000 (max. 10000000)
 
