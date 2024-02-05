@@ -109,7 +109,7 @@
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#squadraContieneGiocatore
 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#squadraContieneGiocatore> rdf:type owl:ObjectProperty ;
-                                                                                          rdfs:domain <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#SquadraScacchistiCampioni> ;
+                                                                                          rdfs:domain <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Squadra> ;
                                                                                           rdfs:range <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Scacchista> .
 
 
