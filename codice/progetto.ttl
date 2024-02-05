@@ -118,7 +118,7 @@ scacchi2023:partitaGiocataDaGiocatore rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#squadraContieneGiocatore
 scacchi2023:squadraContieneGiocatore rdf:type owl:ObjectProperty ;
-                                     rdfs:domain scacchi2023:SquadraScacchistiCampioni ;
+                                     rdfs:domain scacchi2023:Squadra ;
                                      rdfs:range scacchi2023:Scacchista .
 
 
