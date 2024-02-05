@@ -14,9 +14,9 @@
 @base <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023/> .
 
 <http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023> rdf:type owl:Ontology ;
+                                                                  dc:creator "Enrico Cassano"@it ;
                                                                   dc:date "2023-12-27" ;
-                                                                  dc:description "Enrico Cassano"@it ,
-                                                                                 "Ontologia costruita per scopi didattici e divulgativi, riguardante i principali eventi e personalità dell'ambito scacchistico professionale."@it ,
+                                                                  dc:description "Ontologia costruita per scopi didattici e divulgativi, riguardante i principali eventi e personalità dell'ambito scacchistico professionale."@it ,
                                                                                  "This ontology was built for educational and divulgative purposes. It contains the main events and characters of the professional chess scene."@en ;
                                                                   dc:title "Chess Ontology - 2023"@en ;
                                                                   vann:preferredNamespacePrefix "CO" ;
@@ -114,6 +114,12 @@ scacchi2023:partitaGiocataDaGiocatore rdf:type owl:ObjectProperty ;
                                       rdfs:range scacchi2023:Scacchista ;
                                       rdfs:comment "Relazione inversa di giocatoreGiocaPartita"@it ;
                                       rdfs:label "partitaGiocataDaGiocatore"@it .
+
+
+###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#squadraContieneGiocatore
+scacchi2023:squadraContieneGiocatore rdf:type owl:ObjectProperty ;
+                                     rdfs:domain scacchi2023:SquadraScacchistiCampioni ;
+                                     rdfs:range scacchi2023:Scacchista .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#strategiaPartitaBianco
@@ -372,6 +378,21 @@ scacchi2023:ScacchistaVittoriosu rdf:type owl:Class ;
                                  rdfs:comment "Professional player that won at least one match."@en ,
                                               "Scacchista professionista che ha vinto almeno una partita"@it ;
                                  rdfs:label "Scacchista Vittoriosu"@it .
+
+
+###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Squadra
+scacchi2023:Squadra rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#SquadraScacchistiCampioni
+scacchi2023:SquadraScacchistiCampioni rdf:type owl:Class ;
+                                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                            owl:onProperty scacchi2023:squadraContieneGiocatore ;
+                                                            owl:someValuesFrom scacchi2023:WorldChampion
+                                                          ] ;
+                                      rdfs:subClassOf scacchi2023:Squadra ;
+                                      rdfs:comment "Squadra di scacchisti contenente almeno un campione del mondo"@it ;
+                                      rdfs:label "SquadraScacchistiCampioni"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Strategia
@@ -791,6 +812,12 @@ scacchi2023:partitaTzabirGroenfeld rdf:type owl:NamedIndividual ,
                                    scacchi2023:tempoPerGiocatore "60"^^xsd:nonNegativeInteger ;
                                    rdfs:comment "Finale del torneo Chess Olympiads for people with Disabilities."@it ;
                                    rdfs:label "partitaTzabirGroenfeld"@it .
+
+
+###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#squadra1
+scacchi2023:squadra1 rdf:type owl:NamedIndividual ,
+                              scacchi2023:Squadra ;
+                     scacchi2023:squadraContieneGiocatore scacchi2023:DingLiren .
 
 
 #################################################################
