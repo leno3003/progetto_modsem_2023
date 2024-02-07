@@ -381,7 +381,9 @@ scacchi2023:ScacchistaVittoriosu rdf:type owl:Class ;
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#Squadra
-scacchi2023:Squadra rdf:type owl:Class .
+scacchi2023:Squadra rdf:type owl:Class ;
+                    rdfs:comment "Squadra di scacchisti"@it ;
+                    rdfs:label "Squadra"@it .
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#SquadraScacchistiCampioni
