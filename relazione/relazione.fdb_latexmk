@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1707143383 "relazione.tex" "relazione.pdf" "relazione" 1707143384
+["pdflatex"] 1707313625 "relazione.tex" "relazione.pdf" "relazione" 1707313626
   "/etc/texmf/web2c/texmf.cnf" 1668461786 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/leno/Pictures/Honoré_Daumier_032.jpg" 1704030099 54018 469d9ad05539204a950c62433eb6de69 ""
   "/home/leno/Pictures/Screenshots/400px-JaquesCookStaunton.jpg" 1704291329 20006 d2dd8b6630f1bc9d32be5e44b675e6fe ""
@@ -172,10 +172,10 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1685523046 1437184 7cc63a9a4b0874c60af33ca3d468c138 ""
   "FlussoMODSEM2023.drawio.pdf" 1704384215 25187 71c8237aadc4a8f3ecac02baa04e24b8 ""
   "landingpage.drawio.pdf" 1704385327 29798 77af46f29edbb9388a9bb5ee7cd0867a ""
-  "relazione.aux" 1707143384 10650 d0d737870740b3f7ecb4d8d84da5b8c5 "pdflatex"
-  "relazione.out" 1707143384 4902 d69080d850fc3bf0c7fe72d1a3015262 "pdflatex"
-  "relazione.tex" 1707143383 30433 15ad81f4181249a534b03e7d8c3a7789 ""
-  "relazione.toc" 1707143384 2355 087b9bfb2d4e6dad867872dfbadae24d "pdflatex"
+  "relazione.aux" 1707313626 10650 d0d737870740b3f7ecb4d8d84da5b8c5 "pdflatex"
+  "relazione.out" 1707313626 4902 d69080d850fc3bf0c7fe72d1a3015262 "pdflatex"
+  "relazione.tex" 1707313625 30429 bc370f561dbc6e51e4bd9d8b2eebe2b2 ""
+  "relazione.toc" 1707313626 2355 087b9bfb2d4e6dad867872dfbadae24d "pdflatex"
   "scacchisti.drawio.pdf" 1704385323 35012 e02b32ad4dbb5fcf626dbe274e67536d ""
   "strategie.drawio.pdf" 1704385316 32264 83b575eb394a8cf7b004d83283ed734b ""
   "tornei.drawio.pdf" 1704385312 35497 bc30829a85e15c5875067e72f99bbbef ""

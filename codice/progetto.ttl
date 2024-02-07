@@ -758,7 +758,8 @@ scacchi2023:difesaCaroKhan rdf:type owl:NamedIndividual ,
 
 
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#difesaSiciliana
-scacchi2023:difesaSiciliana rdf:type owl:NamedIndividual ;
+scacchi2023:difesaSiciliana rdf:type owl:NamedIndividual ,
+                                     scacchi2023:StrategiaAggressiva ;
                             scacchi2023:strategiaPartitaNero scacchi2023:partitaNepomniachtchiLirenWCC2023 ;
                             rdfs:comment "Strategia di gioco per il nero"@it ;
                             rdfs:label "difesaSiciliana"@it .
@@ -781,7 +782,7 @@ scacchi2023:gambettoDiDonna rdf:type owl:NamedIndividual ,
 ###  http://www.semanticweb.org/leno/ontologies/2023/11/scacchi2023#partitaItaliana
 scacchi2023:partitaItaliana rdf:type owl:NamedIndividual ,
                                      scacchi2023:Strategia ,
-                                     scacchi2023:StrategiaAggressiva ;
+                                     scacchi2023:StrategiaDiPosizione ;
                             scacchi2023:strategiaPartitaBianco scacchi2023:partitaNepomniachtchiLirenWCC2023 ;
                             rdfs:comment "Strategia di gioco per il bianco"@it ;
                             rdfs:label "partitaItaliana"@it .
